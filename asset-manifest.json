@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bullet-journal-log/static/css/main.3250dd69.css",
+    "main.js": "/bullet-journal-log/static/js/main.ac4004f9.js",
+    "index.html": "/bullet-journal-log/index.html",
+    "main.3250dd69.css.map": "/bullet-journal-log/static/css/main.3250dd69.css.map",
+    "main.ac4004f9.js.map": "/bullet-journal-log/static/js/main.ac4004f9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3250dd69.css",
+    "static/js/main.ac4004f9.js"
+  ]
+}
