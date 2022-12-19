@@ -9,6 +9,7 @@
 html,
 body {
   font-size: 16px;
+  background-color: rgb(246, 246, 246);
 }
 
 h1,
@@ -39,4 +40,9 @@ a:visited {
 
 a:hover {
   color: black;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
 }
