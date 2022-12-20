@@ -9,7 +9,8 @@
 html,
 body {
   font-size: 16px;
-  background-color: rgb(246, 246, 246);
+  color: white;
+  background-color: rgb(27, 27, 27);
 }
 
 h1,
@@ -24,6 +25,7 @@ h6 {
 ol,
 ul {
   list-style: none;
+  padding: 0;
 }
 
 button {
