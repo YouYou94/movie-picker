@@ -1,9 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { MainPage } from '../pages';
 
-export default function AppRouter() {
+const AppRouter = () => {
   return (
     <BrowserRouter>
-      <Routes>a</Routes>
+      <Routes>
+        <Route path="/tvshow-alone" element={<MainPage />} />
+      </Routes>
     </BrowserRouter>
   );
-}
+};
+
+export default AppRouter;
