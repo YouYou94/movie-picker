@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     axios
       .get(
-        'https://api.themoviedb.org/3/movie/550?api_key=69c4823b56b37a91a1ea5845cce9ce43',
+        'https://api.themoviedb.org/3/discover/movie?api_key=69c4823b56b37a91a1ea5845cce9ce43',
       )
       .then((res) => console.log(res.data))
       .catch((error) => console.log(error));
