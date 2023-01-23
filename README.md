@@ -1,9 +1,24 @@
-# 나홀로티비쇼
+# 영화 검색 서비스
 
-### 커밋 메시지 컨벤션
+</br>
+</br>
 
-- :sparkles: - 기능 추가
-- :memo: - 파일 추가 및 수정
-- :lipstick: - styled 추가/변경/수정
-- :fire: - 코드/파일 삭제
-- :package: - 패키지 파일 추가
+## 1. 개발 목표
+
+- 타입스크립트 및 Rest API를 이용하여 영화 검색 서비스 프론트엔드 구현
+
+</br>
+</br>
+
+## 2. 사용 기술 및 배포
+
+### 2.1 사용 기술
+
+- TypeScript
+- React
+- Styled-Components
+- Rest API
+
+### 2.2 배포
+
+- Demo : http://YouYou94.github.io/tvshow-alone/ _(준비중)_
