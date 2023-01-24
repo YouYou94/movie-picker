@@ -4,6 +4,8 @@ import './App.css';
 import axios from 'axios';
 
 function App() {
+  // Context API 사용하기
+  // 커스텀 훅 사용하기
   const [movies, setMovies] = useState();
 
   useEffect(() => {
