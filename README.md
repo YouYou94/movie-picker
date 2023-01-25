@@ -1,4 +1,6 @@
-# 영화 검색 서비스
+# Movie Picker
+
+Rest API를 이용하여 TMDB 영화 데이터를 받아와 검색
 
 </br>
 </br>
