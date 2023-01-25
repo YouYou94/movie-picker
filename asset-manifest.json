@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/bullet-journal-log/static/css/main.3250dd69.css",
-    "main.js": "/bullet-journal-log/static/js/main.ac4004f9.js",
-    "index.html": "/bullet-journal-log/index.html",
-    "main.3250dd69.css.map": "/bullet-journal-log/static/css/main.3250dd69.css.map",
-    "main.ac4004f9.js.map": "/bullet-journal-log/static/js/main.ac4004f9.js.map"
+    "main.css": "/movie-picker/static/css/main.d852c9bd.css",
+    "main.js": "/movie-picker/static/js/main.c895bf7b.js",
+    "index.html": "/movie-picker/index.html",
+    "main.d852c9bd.css.map": "/movie-picker/static/css/main.d852c9bd.css.map",
+    "main.c895bf7b.js.map": "/movie-picker/static/js/main.c895bf7b.js.map"
   },
   "entrypoints": [
-    "static/css/main.3250dd69.css",
-    "static/js/main.ac4004f9.js"
+    "static/css/main.d852c9bd.css",
+    "static/js/main.c895bf7b.js"
   ]
 }
