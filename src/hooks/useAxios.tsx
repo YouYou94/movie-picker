@@ -14,7 +14,7 @@ const useAxios = ({ search_name }: AxoisProps) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const searchMovie = async (name: String) => {
+  const getMovie = async (name: String) => {
     await axios
       .get(
         `3/search/movie?api_key=${TMDB_KEY}&&language=ko-KR&page=1&query=${name}`,
@@ -30,7 +30,7 @@ const useAxios = ({ search_name }: AxoisProps) => {
   };
 
   useEffect(() => {
-    searchMovie(search_name);
+    getMovie(search_name);
   }, []);
 
   return { data, error, loading };
