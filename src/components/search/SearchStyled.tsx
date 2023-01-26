@@ -34,12 +34,14 @@ export const SearchBox = styled.div`
   gap: 0.5rem;
 `;
 
-export const SearchInput = styled.input`
+export const SearchInput = styled.input<any>`
   width: 23rem;
   height: 3rem;
 
   border-radius: 5rem;
   padding: 0 1rem;
+
+  font-size: 1rem;
 
   outline: none;
 `;
