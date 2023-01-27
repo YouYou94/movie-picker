@@ -6,7 +6,7 @@ axios.defaults.baseURL = 'https://api.themoviedb.org';
 const TMDB_KEY = process.env.REACT_APP_API_KEY;
 
 type AxoisProps = {
-  search_name: String;
+  search_name: string;
 };
 
 const useAxios = ({ search_name }: AxoisProps) => {
@@ -14,7 +14,7 @@ const useAxios = ({ search_name }: AxoisProps) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const getMovie = async (name: String) => {
+  const getMovie = async (name: string) => {
     await axios
       .get(
         `3/search/movie?api_key=${TMDB_KEY}&&language=ko-KR&page=1&query=${name}`,
