@@ -9,9 +9,11 @@ const SearchContainer = () => {
   const onClickTitle = () => {
     setSearchData('');
 
-    navigate('movie-picker');
+    // id로 데이터 넘기는 거 생각하기
+    navigate('/movie-picker');
   };
 
+  // 유효성 검사 필요
   const onChangeSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setSearchData(value);
