@@ -6,7 +6,11 @@ const SearchContainer = () => {
   const navigate = useNavigate();
   const [searchData, setSearchData] = useState('');
 
-  const onClickTitle = () => navigate('movie-picker');
+  const onClickTitle = () => {
+    setSearchData('');
+
+    navigate('movie-picker');
+  };
 
   const onChangeSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
