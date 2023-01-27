@@ -3,9 +3,16 @@ import * as Styled from './SearchStyled';
 type SearchProps = {
   searchData: string;
   onChangeSearchInput: any;
+  onClickSearchMovie: any;
+  onKeyPressSearchInput: any;
 };
 
-const SearchPresenter = ({ searchData, onChangeSearchInput }: SearchProps) => {
+const SearchPresenter = ({
+  searchData,
+  onChangeSearchInput,
+  onClickSearchMovie,
+  onKeyPressSearchInput,
+}: SearchProps) => {
   return (
     <Styled.Layout>
       <Styled.TitleBox>
@@ -15,9 +22,12 @@ const SearchPresenter = ({ searchData, onChangeSearchInput }: SearchProps) => {
         <Styled.SearchInput
           value={searchData}
           onChange={onChangeSearchInput}
+          onKeyPress={onKeyPressSearchInput}
           placeholder="검색어를 입력해주세요."
         />
-        <Styled.SearchButton>검색</Styled.SearchButton>
+        <Styled.SearchButton onClick={onClickSearchMovie}>
+          검색
+        </Styled.SearchButton>
       </Styled.SearchBox>
     </Styled.Layout>
   );
