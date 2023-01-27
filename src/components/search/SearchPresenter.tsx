@@ -2,6 +2,7 @@ import * as Styled from './SearchStyled';
 
 type SearchProps = {
   searchData: string;
+  onClickTitle: any;
   onChangeSearchInput: any;
   onClickSearchMovie: any;
   onKeyPressSearchInput: any;
@@ -9,6 +10,7 @@ type SearchProps = {
 
 const SearchPresenter = ({
   searchData,
+  onClickTitle,
   onChangeSearchInput,
   onClickSearchMovie,
   onKeyPressSearchInput,
@@ -16,7 +18,7 @@ const SearchPresenter = ({
   return (
     <Styled.Layout>
       <Styled.TitleBox>
-        <Styled.Title>MOVIE PICKER</Styled.Title>
+        <Styled.Title onClick={onClickTitle}>MOVIE PICKER</Styled.Title>
       </Styled.TitleBox>
       <Styled.SearchBox>
         <Styled.SearchInput

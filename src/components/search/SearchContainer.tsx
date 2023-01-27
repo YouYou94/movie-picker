@@ -6,6 +6,8 @@ const SearchContainer = () => {
   const navigate = useNavigate();
   const [searchData, setSearchData] = useState('');
 
+  const onClickTitle = () => navigate('movie-picker');
+
   const onChangeSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setSearchData(value);
@@ -30,6 +32,7 @@ const SearchContainer = () => {
   return (
     <SearchPresenter
       searchData={searchData}
+      onClickTitle={onClickTitle}
       onChangeSearchInput={onChangeSearchInput}
       onClickSearchMovie={onClickSearchMovie}
       onKeyPressSearchInput={onKeyPressSearchInput}

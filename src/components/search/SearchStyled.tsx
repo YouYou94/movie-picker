@@ -23,6 +23,8 @@ export const Title = styled.h1`
   color: rgb(245, 245, 245);
 
   font-size: 3rem;
+
+  cursor: pointer;
 `;
 
 export const SearchBox = styled.div`
