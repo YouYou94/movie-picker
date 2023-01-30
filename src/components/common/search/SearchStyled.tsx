@@ -2,13 +2,11 @@ import styled from 'styled-components';
 import Search from '../../../assets/image/search.png';
 
 export const SearchLayout = styled.div`
-  height: 4rem;
+  height: 6rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background-color: rgb(11, 43, 64);
 `;
 
 export const SearchBox = styled.div`
