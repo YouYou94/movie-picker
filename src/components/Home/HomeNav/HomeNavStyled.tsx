@@ -1,0 +1,56 @@
+import styled from 'styled-components';
+
+export const NavContainer = styled.div`
+  height: 3rem;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 5rem;
+`;
+
+export const NavBox = styled.div`
+  width: 16rem;
+
+  display: flex;
+`;
+
+export const NavPopular = styled.div<{ nowcursor: string }>`
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ${(prop) =>
+    prop.nowcursor === 'popular'
+      ? 'border-bottom: 1px solid rgb(245, 245, 245);'
+      : ''}
+
+  transition: .8s all;
+  cursor: pointer;
+`;
+
+export const NavRecent = styled.div<{ nowcursor: string }>`
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ${(prop) =>
+    prop.nowcursor === 'recent'
+      ? 'border-bottom: 1px solid rgb(245, 245, 245);'
+      : ''}
+
+  transition: .8s all;
+  cursor: pointer;
+`;
+
+export const NavItemLabel = styled.label`
+  color: white;
+
+  font-size: 1.3rem;
+
+  cursor: pointer;
+`;
