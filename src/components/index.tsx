@@ -4,3 +4,6 @@ export { Search } from './common/search/Search';
 export { Layout } from './common/layout/Layout';
 
 /* components */
+
+/* Home */
+export { HomeNav } from './Home/HomeNav/HomeNav';

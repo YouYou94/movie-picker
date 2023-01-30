@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import { Container } from './LayoutStyled';
 
 type LayoutProps = {
-  children: ReactElement<any, any>;
+  children: ReactElement[];
 };
 
 export const Layout = ({ children }: LayoutProps) => {
