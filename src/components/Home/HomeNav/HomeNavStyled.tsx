@@ -39,7 +39,7 @@ export const NavRecent = styled.div<{ nowcursor: string }>`
   align-items: center;
 
   ${(prop) =>
-    prop.nowcursor === 'movie/recent'
+    prop.nowcursor === 'movie/upcoming'
       ? 'border-bottom: 1px solid rgb(245, 245, 245);'
       : ''}
 
