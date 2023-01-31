@@ -24,7 +24,7 @@ export const HomeNav = ({
           <NavItemLabel>인기</NavItemLabel>
         </NavPopular>
         <NavRecent nowcursor={nowCursor} onClick={onClickRecent}>
-          <NavItemLabel>최신</NavItemLabel>
+          <NavItemLabel>개봉예정</NavItemLabel>
         </NavRecent>
       </NavBox>
     </NavContainer>

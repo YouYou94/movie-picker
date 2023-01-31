@@ -23,7 +23,7 @@ export const NavPopular = styled.div<{ nowcursor: string }>`
   align-items: center;
 
   ${(prop) =>
-    prop.nowcursor === 'popular'
+    prop.nowcursor === 'movie/popular'
       ? 'border-bottom: 1px solid rgb(245, 245, 245);'
       : ''}
 
@@ -39,7 +39,7 @@ export const NavRecent = styled.div<{ nowcursor: string }>`
   align-items: center;
 
   ${(prop) =>
-    prop.nowcursor === 'recent'
+    prop.nowcursor === 'movie/recent'
       ? 'border-bottom: 1px solid rgb(245, 245, 245);'
       : ''}
 
