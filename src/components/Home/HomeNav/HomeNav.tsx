@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   NavContainer,
   NavBox,
@@ -7,16 +6,17 @@ import {
   NavItemLabel,
 } from './HomeNavStyled';
 
-const POPULAR = 'popular';
-const RECENT = 'recent';
+type HomeNavProps = {
+  nowCursor: string;
+  onClickPopular: any;
+  onClickRecent: any;
+};
 
-export const HomeNav = () => {
-  const [nowCursor, setNowCursor] = useState(POPULAR);
-
-  const onClickPopular = () => setNowCursor(POPULAR);
-
-  const onClickRecent = () => setNowCursor(RECENT);
-
+export const HomeNav = ({
+  nowCursor,
+  onClickPopular,
+  onClickRecent,
+}: HomeNavProps) => {
   return (
     <NavContainer>
       <NavBox>
