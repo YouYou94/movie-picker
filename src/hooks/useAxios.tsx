@@ -1,24 +1,34 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-axios.defaults.baseURL = 'https://api.themoviedb.org';
+axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 
 const TMDB_KEY = process.env.REACT_APP_API_KEY;
 
 type AxoisProps = {
-  search_name: string;
+  sub_url: string;
+  search_name?: string | null | undefined;
 };
 
-const useAxios = ({ search_name }: AxoisProps) => {
+// search/movie?api_key=${TMDB_KEY}&language=ko-KR&page=1&query=${name}
+// movie/popular?api_key=${TMDB_KEY}&language=ko-KR&page=1
+// movie/upcoming?api_key=${TMDB_KEY}&language=ko-KR&page=1
+
+const useAxios = ({ sub_url, search_name }: AxoisProps) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const getMovie = async (name: string) => {
+  const getMovie = async (
+    sub_url: string,
+    name?: string | null | undefined,
+  ) => {
+    let query = '';
+
+    if (!name) query = `query=${name}`;
+
     await axios
-      .get(
-        `3/search/movie?api_key=${TMDB_KEY}&&language=ko-KR&page=1&query=${name}`,
-      )
+      .get(`${sub_url}?api_key=${TMDB_KEY}&language=ko-KR&page=1${query}`)
       .then((res) => {
         const { results } = res.data;
 
@@ -30,8 +40,8 @@ const useAxios = ({ search_name }: AxoisProps) => {
   };
 
   useEffect(() => {
-    getMovie(search_name);
-  }, []);
+    getMovie(sub_url, search_name);
+  }, [sub_url, search_name]);
 
   return { data, error, loading };
 };
