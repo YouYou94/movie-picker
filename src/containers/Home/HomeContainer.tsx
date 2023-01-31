@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
-import { HomeNav, Template, Search } from '../../components';
+import {
+  HomeNav,
+  Template,
+  Search,
+  PopularMovies,
+  Loading,
+} from '../../components';
+import useAxios from '../../hooks/useAxios';
 
-const POPULAR = 'popular';
-const RECENT = 'recent';
+const POPULAR = 'movie/popular';
+const UPCOMING = 'movie/upcoming';
 
 const HomeContainer = () => {
   /* Search 동작 */
@@ -21,7 +28,14 @@ const HomeContainer = () => {
 
   const onClickPopular = () => setNowCursor(POPULAR);
 
-  const onClickRecent = () => setNowCursor(RECENT);
+  const onClickRecent = () => setNowCursor(UPCOMING);
+
+  /* Movies Data */
+  const { data, error, loading } = useAxios({ sub_url: nowCursor });
+
+  /* Popular Movies */
+
+  /* Recent Movies */
 
   return (
     <Template>
@@ -31,6 +45,14 @@ const HomeContainer = () => {
         onClickPopular={onClickPopular}
         onClickRecent={onClickRecent}
       />
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          {nowCursor === POPULAR ? <PopularMovies /> : <></>}
+          {nowCursor === UPCOMING ? <></> : <></>}
+        </>
+      )}
     </Template>
   );
 };
