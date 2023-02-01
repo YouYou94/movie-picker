@@ -6,7 +6,7 @@ const AppRouter = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/*" element={<Navigate to="/moviepicker" />} />
-        <Route path="/moviepicker" element={<HomePage />}>
+        <Route path="/moviepicker/*" element={<HomePage />}>
           <Route path=":id" element={<HomePage />} />
         </Route>
         <Route path="/moviepicker/search/:id" element={<SearchPage />} />
