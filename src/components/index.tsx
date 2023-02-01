@@ -7,4 +7,4 @@ export { Template } from './common/Template/Template';
 
 /* Home */
 export { HomeNav } from './Home/HomeNav/HomeNav';
-export { PopularMovies } from './Home/PopularMovies/PopularMovies';
+export { HomeMovies } from './Home/HomeMovies/HomeMovies';
