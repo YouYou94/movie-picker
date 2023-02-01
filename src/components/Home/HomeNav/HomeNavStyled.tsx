@@ -10,9 +10,11 @@ export const NavContainer = styled.div`
 `;
 
 export const NavBox = styled.div`
-  width: 16rem;
+  width: 18rem;
 
   display: flex;
+
+  gap: 1rem;
 `;
 
 export const NavPopular = styled.div<{ nowcursor: string }>`

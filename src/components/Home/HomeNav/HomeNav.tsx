@@ -21,10 +21,10 @@ export const HomeNav = ({
     <NavContainer>
       <NavBox>
         <NavPopular nowcursor={nowCursor} onClick={onClickPopular}>
-          <NavItemLabel>인기</NavItemLabel>
+          <NavItemLabel>TOP 20</NavItemLabel>
         </NavPopular>
         <NavRecent nowcursor={nowCursor} onClick={onClickRecent}>
-          <NavItemLabel>개봉예정</NavItemLabel>
+          <NavItemLabel>UPCOMING</NavItemLabel>
         </NavRecent>
       </NavBox>
     </NavContainer>
