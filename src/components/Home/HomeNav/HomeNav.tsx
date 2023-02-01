@@ -24,7 +24,7 @@ export const HomeNav = ({
           <NavItemLabel>TOP 20</NavItemLabel>
         </NavPopular>
         <NavRecent nowcursor={nowCursor} onClick={onClickRecent}>
-          <NavItemLabel>UPCOMING</NavItemLabel>
+          <NavItemLabel>RECENT</NavItemLabel>
         </NavRecent>
       </NavBox>
     </NavContainer>

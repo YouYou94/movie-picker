@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Route, Routes, useNavigate } from 'react-router';
 import {
   HomeNav,
   Template,
   Search,
-  PopularMovies,
+  HomeMovies,
   Loading,
 } from '../../components';
 import useAxios from '../../hooks/useAxios';
 
 const POPULAR = 'movie/popular';
+const POPULAR_URL = '/moviepicker/popular';
+
 const UPCOMING = 'movie/upcoming';
+const UPCOMING_URL = '/moviepicker/upcoming';
 
 const HomeContainer = () => {
+  const navigate = useNavigate();
+
   /* Search 동작 */
   const [keyword, setKeyword] = useState('');
 
@@ -26,16 +32,28 @@ const HomeContainer = () => {
   /* Nav 동작*/
   const [nowCursor, setNowCursor] = useState(POPULAR);
 
-  const onClickPopular = () => setNowCursor(POPULAR);
+  const onClickPopular = () => {
+    navigate(POPULAR_URL);
 
-  const onClickRecent = () => setNowCursor(UPCOMING);
+    setNowCursor(POPULAR);
+  };
+
+  const onClickRecent = () => {
+    navigate(UPCOMING_URL);
+
+    setNowCursor(UPCOMING);
+  };
 
   /* Movies Data */
-  const { data, error, loading } = useAxios({ sub_url: nowCursor });
+  const { movies, error, loading }: any = useAxios({ sub_url: nowCursor });
 
   /* Popular Movies */
 
   /* Recent Movies */
+
+  useEffect(() => {
+    if (error) alert(`에러 ! ${error}`);
+  }, [error]);
 
   return (
     <Template>
@@ -48,10 +66,10 @@ const HomeContainer = () => {
       {loading ? (
         <Loading />
       ) : (
-        <>
-          {nowCursor === POPULAR ? <PopularMovies /> : <></>}
-          {nowCursor === UPCOMING ? <></> : <></>}
-        </>
+        <Routes>
+          <Route path="/*" element={<HomeMovies movies={movies} />} />
+          <Route path="/upcoming" element={<HomeMovies movies={movies} />} />
+        </Routes>
       )}
     </Template>
   );
