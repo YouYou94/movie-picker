@@ -5,6 +5,8 @@ axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 
 const TMDB_KEY = process.env.REACT_APP_API_KEY;
 
+const UPCOMING = 'movie/upcoming';
+
 type AxoisProps = {
   sub_url: string;
   search_name?: string | null | undefined;
@@ -25,12 +27,20 @@ const useAxios = ({ sub_url, search_name }: AxoisProps) => {
   ) => {
     let query = '';
 
-    if (!name) query = `query=${name}`;
+    if (!name) query = `$query=${name}`;
 
     await axios
       .get(`${sub_url}?api_key=${TMDB_KEY}&language=ko-KR&page=1${query}`)
       .then((res) => {
         const { results } = res.data;
+
+        if (sub_url === UPCOMING)
+          results.sort(function (a: any, b: any) {
+            return (
+              Number(b.release_date.replaceAll('-', '')) -
+              Number(a.release_date.replaceAll('-', ''))
+            );
+          });
 
         setMovies(results);
       })
