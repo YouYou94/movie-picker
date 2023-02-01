@@ -15,7 +15,7 @@ type AxoisProps = {
 // movie/upcoming?api_key=${TMDB_KEY}&language=ko-KR&page=1
 
 const useAxios = ({ sub_url, search_name }: AxoisProps) => {
-  const [data, setData] = useState([]);
+  const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -32,7 +32,7 @@ const useAxios = ({ sub_url, search_name }: AxoisProps) => {
       .then((res) => {
         const { results } = res.data;
 
-        setData(results);
+        setMovies(results);
       })
       .catch((error) => setError(error));
 
@@ -43,7 +43,7 @@ const useAxios = ({ sub_url, search_name }: AxoisProps) => {
     getMovie(sub_url, search_name);
   }, [sub_url, search_name]);
 
-  return { data, error, loading };
+  return { movies, error, loading };
 };
 
 export default useAxios;
