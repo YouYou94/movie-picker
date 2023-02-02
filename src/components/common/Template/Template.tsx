@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import { Layout } from './TemplateStyled';
 
 type TemplateProps = {
-  children: ReactElement[];
+  children: ReactElement[] | ReactElement;
 };
 
 export const Template = ({ children }: TemplateProps) => {
