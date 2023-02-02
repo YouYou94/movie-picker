@@ -44,12 +44,14 @@ const HomeContainer = () => {
     setNowCursor(UPCOMING);
   };
 
-  /* Movies Data */
+  /* Movies */
   const { movies, error, loading }: any = useAxios({ sub_url: nowCursor });
 
-  /* Popular Movies */
+  const onClickMoive = (event: React.MouseEvent<HTMLElement>) => {
+    const { id } = event.currentTarget;
 
-  /* Recent Movies */
+    navigate(`/moviepicker/movie/${id}`);
+  };
 
   useEffect(() => {
     if (error) alert(`에러 ! ${error}`);
@@ -67,8 +69,14 @@ const HomeContainer = () => {
         <Loading />
       ) : (
         <Routes>
-          <Route path="/*" element={<HomeMovies movies={movies} />} />
-          <Route path="/upcoming" element={<HomeMovies movies={movies} />} />
+          <Route
+            path="/*"
+            element={<HomeMovies movies={movies} onClickMoive={onClickMoive} />}
+          />
+          <Route
+            path="/upcoming"
+            element={<HomeMovies movies={movies} onClickMoive={onClickMoive} />}
+          />
         </Routes>
       )}
     </Template>
