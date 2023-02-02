@@ -18,9 +18,9 @@ type AxoisProps = {
 // movie/upcoming?api_key=${TMDB_KEY}&language=ko-KR&page=1
 
 const useAxios = ({ sub_url, search_name }: AxoisProps) => {
-  const [movies, setMovies] = useState('');
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [movies, setMovies] = useState<any>([]);
+  const [error, setError] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(true);
 
   const getMovie = async (
     sub_url: string,
