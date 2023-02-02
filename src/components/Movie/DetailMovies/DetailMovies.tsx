@@ -9,15 +9,16 @@ import {
   Description,
   MovieTitle,
   DescriptionLabel,
+  PickerBox,
+  PickerButton,
 } from './DetailMoviesStyled';
 
 type DetailMovieProps = {
   movies?: any;
+  onClickPicker: any;
 };
 
-export const DetailMovies = ({ movies }: DetailMovieProps) => {
-  console.log(movies);
-
+export const DetailMovies = ({ movies, onClickPicker }: DetailMovieProps) => {
   const {
     backdrop_path,
     poster_path,
@@ -47,6 +48,9 @@ export const DetailMovies = ({ movies }: DetailMovieProps) => {
                 <DescriptionLabel>{release_date}</DescriptionLabel>
                 <DescriptionLabel>{overview}</DescriptionLabel>
               </Description>
+              <PickerBox>
+                <PickerButton onClick={onClickPicker}>PICKER</PickerButton>
+              </PickerBox>
             </DescriptionBox>
           </DescriptionContainer>
         </DetailArticle>

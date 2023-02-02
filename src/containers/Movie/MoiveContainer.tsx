@@ -1,12 +1,15 @@
 import useAxios from '../../hooks/useAxios';
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
+import _ from 'lodash';
 import {
   DetailMovies,
   Loading,
   Template,
   UserOperation,
 } from '../../components';
+import { useRecoilState } from 'recoil';
+import { pickerState } from '../../recoil/atom';
 
 const MOVIE = 'movie/';
 
@@ -17,6 +20,16 @@ const MovieContainer = () => {
     sub_url: `${MOVIE}${param.id}`,
   });
 
+  const [picker, setPicker] = useRecoilState(pickerState);
+
+  const onClickPicker = () => {
+    const { title, poster_path } = movies;
+
+    setPicker(
+      _.uniqBy([...picker, { id: param.id, title, poster_path }], 'id'),
+    );
+  };
+
   useEffect(() => {
     if (error) alert(`에러! ${error}`);
   }, [error]);
@@ -24,7 +37,11 @@ const MovieContainer = () => {
   return (
     <Template>
       <UserOperation />
-      {loading ? <Loading /> : <DetailMovies movies={movies} />}
+      {loading ? (
+        <Loading />
+      ) : (
+        <DetailMovies movies={movies} onClickPicker={onClickPicker} />
+      )}
     </Template>
   );
 };

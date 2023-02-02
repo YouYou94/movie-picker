@@ -91,3 +91,28 @@ export const MovieTitle = styled.h1``;
 export const MovieEngTitle = styled.h2``;
 
 export const DescriptionLabel = styled.label``;
+
+export const PickerBox = styled.div`
+  height: 4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const PickerButton = styled.button`
+  width: 20rem;
+  height: 3rem;
+
+  border: none;
+  border-radius: 0.8rem;
+
+  font-size: 1.2rem;
+
+  color: white;
+  background-color: rgb(48, 165, 191);
+
+  :hover {
+    background-color: rgb(48, 191, 148);
+  }
+`;
