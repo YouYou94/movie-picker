@@ -39,3 +39,42 @@ export const ExitImage = styled.img.attrs({
 
   cursor: pointer;
 `;
+
+export const PickerList = styled.ul`
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+`;
+
+export const PickerItem = styled.li`
+  height: 6rem;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 1rem;
+
+  color: white;
+
+  gap: 1rem;
+`;
+
+export const PosterBox = styled.div`
+  width: 4rem;
+  height: 6rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const PosterImg = styled.img`
+  width: 100%;
+
+  border-radius: 0.7rem;
+`;
+
+export const PickerMovieTitle = styled.label`
+  flex: 1;
+`;
