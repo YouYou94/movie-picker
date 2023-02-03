@@ -7,6 +7,10 @@ export const DetailContainer = styled.div`
 
   display: flex;
   flex-direction: column;
+
+  padding: 1rem 5rem;
+
+  gap: 2rem;
 `;
 
 export const BackdropImg = styled.img`
@@ -20,20 +24,21 @@ export const BackdropImg = styled.img`
   z-index: 0;
 `;
 
-export const DetailArticle = styled.div`
+export const DescriptionContainer = styled.div`
   flex: 1;
 
   display: flex;
 
-  z-index: 1;
+  color: white;
 
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-  }
+  gap: 2rem;
+
+  z-index: 1;
 `;
 
 export const PosterBox = styled.div`
-  flex: 1;
+  width: 18rem;
+  height: 27rem;
 
   display: flex;
   justify-content: center;
@@ -45,52 +50,32 @@ export const PosterBox = styled.div`
 `;
 
 export const PosterImg = styled.img`
-  width: 70%;
+  width: 100%;
 
   border-radius: 0.7rem;
 `;
 
-export const DescriptionContainer = styled.div`
-  flex: 1;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @media screen and (max-width: 768px) {
-    width: 100%;
-    height: 100%;
-  }
-`;
-
-export const DescriptionBox = styled.div`
-  width: 80%;
-  height: 80%;
-
-  display: flex;
-  flex-direction: column;
-
-  border-radius: 0.7rem;
-  padding: 2rem;
-
-  color: white;
-  background-color: rgb(0, 0, 0, 0.6);
-`;
-
-export const Description = styled.div`
+export const OverviewContainer = styled.div`
   flex: 1;
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+
+  gap: 1rem;
+`;
+
+export const OverviewBox = styled.div`
+  display: flex;
 
   gap: 1rem;
 `;
 
 export const MovieTitle = styled.h1``;
 
-export const MovieEngTitle = styled.h2``;
+export const MovieTagline = styled.h2``;
 
-export const DescriptionLabel = styled.label``;
+export const OverviewLabel = styled.label``;
 
 export const PickerBox = styled.div`
   height: 4rem;
@@ -115,4 +100,16 @@ export const PickerButton = styled.button`
   :hover {
     background-color: rgb(48, 191, 148);
   }
+`;
+
+export const Line = styled.div`
+  border-top: 1px solid white;
+`;
+
+export const EtcContainer = styled.div`
+  flex: 1;
+
+  display: flex;
+
+  z-index: 1;
 `;
