@@ -2,11 +2,20 @@ import styled from 'styled-components';
 import Search from '../../../assets/image/search.png';
 
 export const SearchLayout = styled.div`
+  position: fixed;
+
+  width: 100%;
   height: 6rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  border-bottom: 1px solid rgb(245, 245, 245);
+
+  background-color: rgb(11, 43, 64);
+
+  z-index: 2;
 `;
 
 export const SearchBox = styled.div`
