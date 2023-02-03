@@ -19,8 +19,9 @@ Rest API를 이용하여 TMDB 영화 데이터를 받아와 검색
 - TypeScript
 - React
 - Styled-Components
-- Rest API
+- Axios
+- Recoil
 
 ### 2.2 배포
 
-- Demo : http://YouYou94.github.io/tvshow-alone/ _(준비중)_
+- Demo : http://YouYou94.github.io/movie-picker/ _(준비중)_
