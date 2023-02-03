@@ -5,11 +5,12 @@ import _ from 'lodash';
 import {
   DetailMovies,
   Loading,
+  Picker,
   Template,
   UserOperation,
 } from '../../components';
 import { useRecoilState } from 'recoil';
-import { pickerState } from '../../recoil/atom';
+import { displayState, pickerState } from '../../recoil/atom';
 
 const MOVIE = 'movie/';
 
@@ -21,6 +22,7 @@ const MovieContainer = () => {
   });
 
   const [picker, setPicker] = useRecoilState(pickerState);
+  const [isDisplay, setIsDisplay] = useRecoilState(displayState);
 
   const onClickPicker = () => {
     const { title, poster_path } = movies;
@@ -36,7 +38,8 @@ const MovieContainer = () => {
 
   return (
     <Template>
-      <UserOperation />
+      <Picker isDisplay={isDisplay} setIsDisplay={setIsDisplay} />
+      <UserOperation setIsDisplay={setIsDisplay} />
       {loading ? (
         <Loading />
       ) : (
