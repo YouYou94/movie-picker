@@ -6,7 +6,7 @@ export const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
-  margin-top: 6rem;
+  margin-top: 7rem;
   padding: 0 5rem;
 `;
 
