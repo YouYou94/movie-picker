@@ -38,7 +38,11 @@ const MovieContainer = () => {
 
   return (
     <Template>
-      <Picker isDisplay={isDisplay} setIsDisplay={setIsDisplay} />
+      <Picker
+        picker={picker}
+        isDisplay={isDisplay}
+        setIsDisplay={setIsDisplay}
+      />
       <UserOperation setIsDisplay={setIsDisplay} />
       {loading ? (
         <Loading />
