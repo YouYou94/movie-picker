@@ -9,6 +9,4 @@ export const Layout = styled.div`
   flex-direction: column;
 
   background-color: rgb(11, 43, 64);
-
-  overflow: hidden;
 `;

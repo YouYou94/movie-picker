@@ -1,5 +1,7 @@
+import { MovieContainer } from '../containers';
+
 const MoviePage = () => {
-  return <></>;
+  return <MovieContainer />;
 };
 
 export default MoviePage;

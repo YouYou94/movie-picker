@@ -22,7 +22,7 @@ export const HomeMovies = ({ movies, onClickMoive }: MoivesProp) => {
         return (
           <MovieBox key={id} id={id} onClick={onClickMoive}>
             <MoviePoster
-              poster={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+              poster={`https://image.tmdb.org/t/p/original/${poster_path}`}
             ></MoviePoster>
             <MovieCaption>
               <MovieTitle>{title}</MovieTitle>

@@ -1,5 +1,6 @@
 /* Reset CSS */
 *,
+div,
 :after,
 :before {
   margin: 0;
@@ -49,4 +50,11 @@ a:hover {
 
   display: flex;
   flex-direction: column;
+}
+
+.practice {
+  background-color: rgb(255, 255, 185);
+  background-color: rgb(48, 165, 191);
+  background-color: rgb(48, 191, 148);
+  background-color: rgb(2, 53, 53);
 }

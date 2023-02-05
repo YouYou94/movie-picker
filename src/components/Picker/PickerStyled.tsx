@@ -4,19 +4,18 @@ import Exit from '../../assets/image/exit.png';
 export const PickerContainer = styled.div<{ isDisplay?: boolean }>`
   position: absolute;
 
-  right: ${(prop) => (prop.isDisplay ? '0' : '-20rem')};
+  display: ${(prop) => (prop.isDisplay ? 'flex' : 'none')};
+
+  right: 0;
 
   width: 20rem;
   height: 100%;
 
-  display: flex;
   flex-direction: column;
 
   background-color: rgb(11, 43, 64);
 
   z-index: 2;
-
-  transition: 0.5s all;
 
   gap: 1rem;
 `;

@@ -33,7 +33,7 @@ export const DetailMovies = ({ movies, onClickPicker }: DetailMovieProps) => {
     overview,
   } = movies;
 
-  console.log(movies);
+  //console.log(movies);
 
   // 내일 detail 부분 css 수정 tmdb detail처럼 변경하기
   return (
@@ -76,29 +76,3 @@ export const DetailMovies = ({ movies, onClickPicker }: DetailMovieProps) => {
     </>
   );
 };
-
-/*
-
-<PosterBox>
-            <PosterImg
-              src={`https://image.tmdb.org/t/p/original/${poster_path}`}
-              alt={`${poster_path}`}
-            />
-          </PosterBox>
-          <DescriptionContainer>
-            <DescriptionBox>
-              <Description>
-                <MovieTitle>
-                  {title} ({original_title})
-                </MovieTitle>
-                <DescriptionLabel>{tagline}</DescriptionLabel>
-                <DescriptionLabel>{release_date}</DescriptionLabel>
-                <DescriptionLabel>{overview}</DescriptionLabel>
-              </Description>
-              <PickerBox>
-                <PickerButton onClick={onClickPicker}>PICKER</PickerButton>
-              </PickerBox>
-            </DescriptionBox>
-          </DescriptionContainer>
-
-*/
