@@ -33,9 +33,6 @@ export const DetailMovies = ({ movies, onClickPicker }: DetailMovieProps) => {
     overview,
   } = movies;
 
-  //console.log(movies);
-
-  // 내일 detail 부분 css 수정 tmdb detail처럼 변경하기
   return (
     <>
       <DetailContainer>
