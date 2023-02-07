@@ -2,24 +2,20 @@ import styled from 'styled-components';
 import Search from '../../../assets/image/search.png';
 
 export const SearchLayout = styled.div`
-  position: fixed;
-
   width: 100%;
-  height: 6rem;
+  height: 8rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  border-bottom: 1px solid rgb(245, 245, 245);
-
-  background-color: rgb(11, 43, 64);
+  background-color: rgb(31, 41, 55);
 
   z-index: 2;
 `;
 
 export const SearchBox = styled.div`
-  width: 40rem;
+  width: 50rem;
   height: 3rem;
 
   display: flex;
@@ -35,10 +31,11 @@ export const SearchInput = styled.input`
   flex: 1;
 
   border: none;
+  padding-left: 1rem;
 
   background-color: transparent;
 
-  font-size: 1rem;
+  font-size: 1.1rem;
 
   outline: none;
 `;
@@ -57,7 +54,7 @@ export const SearchButton = styled.button`
   background-color: transparent;
 
   :hover {
-    background-color: rgb(48, 165, 191, 0.2);
+    background-color: rgb(31, 41, 55, 0.1);
   }
 `;
 

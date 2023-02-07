@@ -1,32 +1,34 @@
 import {
-  NavContainer,
+  NavLayout,
   NavBox,
-  NavPopular,
-  NavRecent,
-  NavItemLabel,
+  SearchResultBox,
+  NavHashTag,
 } from './HomeNavStyled';
 
 type HomeNavProps = {
-  nowCursor: string;
+  isPopular: boolean;
+  isUpcoming: boolean;
   onClickPopular: any;
   onClickRecent: any;
 };
 
 export const HomeNav = ({
-  nowCursor,
+  isPopular,
+  isUpcoming,
   onClickPopular,
   onClickRecent,
 }: HomeNavProps) => {
   return (
-    <NavContainer>
+    <NavLayout>
       <NavBox>
-        <NavPopular nowcursor={nowCursor} onClick={onClickPopular}>
-          <NavItemLabel>TOP 20</NavItemLabel>
-        </NavPopular>
-        <NavRecent nowcursor={nowCursor} onClick={onClickRecent}>
-          <NavItemLabel>RECENT</NavItemLabel>
-        </NavRecent>
+        <NavHashTag isSelect={isPopular} onClick={onClickPopular}>
+          #인기
+        </NavHashTag>
+        <NavHashTag isSelect={isUpcoming} onClick={onClickRecent}>
+          #최신
+        </NavHashTag>
       </NavBox>
-    </NavContainer>
+      <SearchResultBox></SearchResultBox>
+    </NavLayout>
   );
 };

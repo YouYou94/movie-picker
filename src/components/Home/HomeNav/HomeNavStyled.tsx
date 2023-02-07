@@ -1,59 +1,44 @@
 import styled from 'styled-components';
 
-export const NavContainer = styled.div`
-  height: 3rem;
+export const NavLayout = styled.nav`
+  height: 5rem;
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
-  margin-top: 7rem;
   padding: 0 5rem;
 `;
 
 export const NavBox = styled.div`
-  width: 18rem;
-
   display: flex;
 
   gap: 1rem;
 `;
 
-export const NavPopular = styled.div<{ nowcursor: string }>`
-  flex: 1;
+export const SearchResultBox = styled.div``;
+
+export const NavHashTag = styled.div<{ isSelect: boolean }>`
+  width: 7rem;
+  height: 2.5rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  ${(prop) =>
-    prop.nowcursor === 'movie/popular'
-      ? 'border-bottom: 1px solid rgb(245, 245, 245);'
-      : ''}
+  border-radius: 0.5rem;
 
-  transition: .8s all;
-  cursor: pointer;
-`;
+  background-color: ${(prop) =>
+    prop.isSelect ? 'rgb(31, 41, 55)' : 'rgb(224, 226, 233)'};
 
-export const NavRecent = styled.div<{ nowcursor: string }>`
-  flex: 1;
+  color: ${(prop) => (prop.isSelect ? 'rgb(255, 255, 255)' : 'rgb(0, 0, 0)')};
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  ${(prop) =>
-    prop.nowcursor === 'movie/upcoming'
-      ? 'border-bottom: 1px solid rgb(245, 245, 245);'
-      : ''}
-
-  transition: .8s all;
-  cursor: pointer;
-`;
-
-export const NavItemLabel = styled.label`
-  color: white;
-
-  font-size: 1.3rem;
+  font-weight: 700;
 
   cursor: pointer;
+
+  :hover {
+    color: white;
+    background-color: rgb(31, 41, 55);
+  }
 `;

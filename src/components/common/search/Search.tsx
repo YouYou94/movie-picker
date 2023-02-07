@@ -26,7 +26,7 @@ export const Search = ({
           value={state}
           onChange={onChangeHandler}
           onKeyPress={onKeyPressHandler}
-          placeholder="검색할 영화를 입력해주세요."
+          placeholder="Enter a movie to search for."
         />
         <SearchButton onClick={onClickHandler}>
           <SearchImage />
