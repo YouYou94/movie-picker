@@ -1,15 +1,14 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { Home } from '../pages';
+import { Home, Movie, Search } from '../pages';
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/*" element={<Navigate to="/moviepicker" />} />
-        <Route path="/moviepicker/*" element={<Home />}>
-          {/* 인기 영화 및 최신 영화 */}
-          {/* 검색 영화 */}
-        </Route>
+        <Route path="/moviepicker/*" element={<Home />} />
+        <Route path="/moviepicker/*" element={<Movie />} />
+        <Route path="/moviepicker/search/*" element={<Search />} />
       </Routes>
     </BrowserRouter>
   );
