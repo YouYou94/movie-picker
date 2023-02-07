@@ -1,15 +1,34 @@
 import styled from 'styled-components';
 
-export const MoviesLayout = styled.div`
+export const MoviesLayout = styled.section`
   flex: 1;
 
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 
-  padding: 3rem 3rem;
+  padding: 0rem 5rem;
 
-  gap: 3rem;
+  gap: 2rem;
+
+  @media screen and (max-width: 1400px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @media screen and (max-width: 1254px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (max-width: 880px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 560px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const MovieCaption = styled.div`
@@ -20,32 +39,32 @@ export const MovieCaption = styled.div`
 
   display: none;
 
+  border-radius: 1rem;
   padding: 2rem;
 
   color: white;
 
-  font-size: 1rem;
+  font-size: 0.8rem;
 
   background-color: rgb(45, 45, 45, 0.8);
 `;
 
-export const MovieBox = styled.div`
+export const MovieBox = styled.article`
   position: relative;
 
-  width: 16rem;
-  height: 24rem;
+  aspect-ratio: 2 / 3;
 
   display: flex;
   flex-direction: column;
 
   border-radius: 1rem;
 
-  transition: 0.2s all;
+  transition: 0.5s all;
 
   cursor: pointer;
 
   :hover {
-    transform: translateY(-2%);
+    transform: scale(105%, 105%);
   }
 
   :hover {

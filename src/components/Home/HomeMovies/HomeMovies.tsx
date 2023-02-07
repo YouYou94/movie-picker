@@ -23,12 +23,12 @@ export const HomeMovies = ({ movies, onClickMoive }: MoivesProp) => {
           <MovieBox key={id} id={id} onClick={onClickMoive}>
             <MoviePoster
               poster={`https://image.tmdb.org/t/p/original/${poster_path}`}
-            ></MoviePoster>
+            />
             <MovieCaption>
               <MovieTitle>{title}</MovieTitle>
               <MovieReleaseDate>{release_date}</MovieReleaseDate>
               <MovieOverview>
-                {overview ? overview.substr(0, 100) + '...' : 'overview 없음'}
+                {overview ? overview : 'overview 없음'}
               </MovieOverview>
             </MovieCaption>
           </MovieBox>
