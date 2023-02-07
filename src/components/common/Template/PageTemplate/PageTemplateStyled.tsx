@@ -8,5 +8,5 @@ export const Layout = styled.div`
   display: flex;
   flex-direction: column;
 
-  background-color: rgb(11, 43, 64);
+  background-color: rgb(250, 250, 250);
 `;

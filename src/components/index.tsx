@@ -1,7 +1,7 @@
 /* common components */
 export { Loading } from './common/loading/Loading';
 export { Search } from './common/search/Search';
-export { Template } from './common/Template/Template';
+export { PageTemplate } from './common/Template/PageTemplate/PageTemplate';
 
 /* components */
 
