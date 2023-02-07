@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes, useNavigate } from 'react-router';
+import { Outlet, Route, Routes, useNavigate } from 'react-router';
 import {
   HomeNav,
-  Template,
   Search,
   HomeMovies,
   Loading,
+  PageTemplate,
+  Header,
 } from '../../components';
 import useAxios from '../../hooks/useAxios';
 
@@ -19,7 +20,7 @@ const HomeContainer = () => {
   const navigate = useNavigate();
 
   /* Search 동작 */
-  const [keyword, setKeyword] = useState('');
+  const [keyword, setKeyword] = useState<string>('');
 
   const onChangeSearchKeyword = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -29,19 +30,42 @@ const HomeContainer = () => {
     setKeyword(value);
   };
 
+  const onClickSearchIcon = () => {
+    navigate(`/moviepicker/search/${keyword}`);
+  };
+
+  const onKeyPressSearchEnter = (
+    event: React.KeyboardEvent<HTMLInputElement>,
+  ) => {
+    const { key } = event;
+
+    if (key === 'Enter') {
+      if (!keyword) {
+        alert('검색창 안의 값을 입력해주세요!');
+        return;
+      } else onClickSearchIcon();
+    }
+  };
+
   /* Nav 동작*/
-  const [nowCursor, setNowCursor] = useState(POPULAR);
+  const [isPopular, setIsPupular] = useState<boolean>(true);
+  const [isUpcoming, setIsUpcoming] = useState<boolean>(false);
+  const [nowCursor, setNowCursor] = useState<string>(POPULAR);
 
   const onClickPopular = () => {
     navigate(POPULAR_URL);
 
     setNowCursor(POPULAR);
+    setIsPupular(true);
+    setIsUpcoming(false);
   };
 
   const onClickRecent = () => {
     navigate(UPCOMING_URL);
 
     setNowCursor(UPCOMING);
+    setIsPupular(false);
+    setIsUpcoming(true);
   };
 
   /* Movies */
@@ -58,10 +82,17 @@ const HomeContainer = () => {
   }, [error]);
 
   return (
-    <Template>
-      <Search state={keyword} onChangeHandler={onChangeSearchKeyword} />
+    <PageTemplate>
+      <Header />
+      <Search
+        state={keyword}
+        onChangeHandler={onChangeSearchKeyword}
+        onClickHandler={onClickSearchIcon}
+        onKeyPressHandler={onKeyPressSearchEnter}
+      />
       <HomeNav
-        nowCursor={nowCursor}
+        isPopular={isPopular}
+        isUpcoming={isUpcoming}
         onClickPopular={onClickPopular}
         onClickRecent={onClickRecent}
       />
@@ -79,7 +110,7 @@ const HomeContainer = () => {
           />
         </Routes>
       )}
-    </Template>
+    </PageTemplate>
   );
 };
 

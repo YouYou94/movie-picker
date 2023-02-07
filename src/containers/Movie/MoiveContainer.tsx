@@ -2,13 +2,7 @@ import useAxios from '../../hooks/useAxios';
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
 import _ from 'lodash';
-import {
-  DetailMovies,
-  Loading,
-  Picker,
-  Template,
-  UserOperation,
-} from '../../components';
+import { DetailMovies, Loading, Picker, UserOperation } from '../../components';
 import { useRecoilState } from 'recoil';
 import { displayState, pickerState } from '../../recoil/atom';
 
@@ -36,21 +30,7 @@ const MovieContainer = () => {
     if (error) alert(`에러! ${error}`);
   }, [error]);
 
-  return (
-    <Template>
-      <Picker
-        picker={picker}
-        isDisplay={isDisplay}
-        setIsDisplay={setIsDisplay}
-      />
-      <UserOperation setIsDisplay={setIsDisplay} />
-      {loading ? (
-        <Loading />
-      ) : (
-        <DetailMovies movies={movies} onClickPicker={onClickPicker} />
-      )}
-    </Template>
-  );
+  return <></>;
 };
 
 export default MovieContainer;

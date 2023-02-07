@@ -1,16 +1,15 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { HomePage, MoviePage, SearchPage } from '../pages';
+import { Home } from '../pages';
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/*" element={<Navigate to="/moviepicker" />} />
-        <Route path="/moviepicker/*" element={<HomePage />}>
-          <Route path=":id" element={<HomePage />} />
+        <Route path="/moviepicker/*" element={<Home />}>
+          {/* 인기 영화 및 최신 영화 */}
+          {/* 검색 영화 */}
         </Route>
-        <Route path="/moviepicker/search/:id" element={<SearchPage />} />
-        <Route path="/moviepicker/movie/:id" element={<MoviePage />} />
       </Routes>
     </BrowserRouter>
   );
@@ -40,5 +39,4 @@ export default AppRouter;
 - 섹션 : 해당 영화의 디테일 정보
 
 그렇다면 페이지는 총 3개
-
 */
