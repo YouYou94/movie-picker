@@ -15,6 +15,8 @@ export const HeaderLayout = styled.header`
   padding: 0 3rem;
 
   background-color: white;
+
+  z-index: 1;
 `;
 
 export const PageTitle = styled.h1`

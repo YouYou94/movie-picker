@@ -10,8 +10,6 @@ export const SearchLayout = styled.div`
   align-items: center;
 
   background-color: rgb(31, 41, 55);
-
-  z-index: 2;
 `;
 
 export const SearchBox = styled.div`
