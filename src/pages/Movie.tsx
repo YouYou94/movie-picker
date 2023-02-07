@@ -1,7 +1,7 @@
 import { MovieContainer } from '../containers';
 
-const MoviePage = () => {
+const Movie = () => {
   return <MovieContainer />;
 };
 
-export default MoviePage;
+export default Movie;

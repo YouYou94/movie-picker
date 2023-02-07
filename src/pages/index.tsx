@@ -1,3 +1,3 @@
 export { default as Home } from './Home';
-export { default as SearchPage } from './SearchPage';
-export { default as MoviePage } from './MoviePage';
+export { default as Search } from './Search';
+export { default as Movie } from './Movie';
