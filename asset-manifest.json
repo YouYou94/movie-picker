@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/movie-picker/static/css/main.280459fe.css",
-    "main.js": "/movie-picker/static/js/main.c83f95ad.js",
+    "main.css": "/movie-picker/static/css/main.cc131fba.css",
+    "main.js": "/movie-picker/static/js/main.ad78bbc2.js",
+    "static/media/Dosis-Regular.ttf": "/movie-picker/static/media/Dosis-Regular.16c5afafe71efb210033.ttf",
     "index.html": "/movie-picker/index.html",
-    "main.280459fe.css.map": "/movie-picker/static/css/main.280459fe.css.map",
-    "main.c83f95ad.js.map": "/movie-picker/static/js/main.c83f95ad.js.map"
+    "main.cc131fba.css.map": "/movie-picker/static/css/main.cc131fba.css.map",
+    "main.ad78bbc2.js.map": "/movie-picker/static/js/main.ad78bbc2.js.map"
   },
   "entrypoints": [
-    "static/css/main.280459fe.css",
-    "static/js/main.c83f95ad.js"
+    "static/css/main.cc131fba.css",
+    "static/js/main.ad78bbc2.js"
   ]
 }
