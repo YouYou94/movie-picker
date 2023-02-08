@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Outlet, Route, Routes, useNavigate } from 'react-router';
+import { Route, Routes, useNavigate } from 'react-router';
+import useAxios from '../../hooks/useAxios';
 import {
-  HomeNav,
+  Nav,
   Search,
-  HomeMovies,
+  Movies,
   Loading,
   PageTemplate,
   Header,
 } from '../../components';
-import useAxios from '../../hooks/useAxios';
 
 const POPULAR = 'movie/popular';
 const POPULAR_URL = '/moviepicker/popular';
@@ -21,31 +21,6 @@ const HomeContainer = () => {
 
   /* Search 동작 */
   const [keyword, setKeyword] = useState<string>('');
-
-  const onChangeSearchKeyword = (
-    event: React.ChangeEvent<HTMLInputElement>,
-  ) => {
-    const { value } = event.target;
-
-    setKeyword(value);
-  };
-
-  const onClickSearchIcon = () => {
-    navigate(`/moviepicker/search/${keyword}`);
-  };
-
-  const onKeyPressSearchEnter = (
-    event: React.KeyboardEvent<HTMLInputElement>,
-  ) => {
-    const { key } = event;
-
-    if (key === 'Enter') {
-      if (!keyword) {
-        alert('검색창 안의 값을 입력해주세요!');
-        return;
-      } else onClickSearchIcon();
-    }
-  };
 
   /* Nav 동작*/
   const [isPopular, setIsPupular] = useState<boolean>(true);
@@ -71,7 +46,7 @@ const HomeContainer = () => {
   /* Movies */
   const { movies, error, loading }: any = useAxios({ sub_url: nowCursor });
 
-  const onClickMoive = (event: React.MouseEvent<HTMLElement>) => {
+  const onClickMovie = (event: React.MouseEvent<HTMLElement>) => {
     const { id } = event.currentTarget;
 
     navigate(`/moviepicker/movie/${id}`);
@@ -84,13 +59,8 @@ const HomeContainer = () => {
   return (
     <PageTemplate>
       <Header />
-      <Search
-        state={keyword}
-        onChangeHandler={onChangeSearchKeyword}
-        onClickHandler={onClickSearchIcon}
-        onKeyPressHandler={onKeyPressSearchEnter}
-      />
-      <HomeNav
+      <Search state={keyword} setState={setKeyword} />
+      <Nav
         isPopular={isPopular}
         isUpcoming={isUpcoming}
         onClickPopular={onClickPopular}
@@ -102,11 +72,11 @@ const HomeContainer = () => {
         <Routes>
           <Route
             path="/*"
-            element={<HomeMovies movies={movies} onClickMoive={onClickMoive} />}
+            element={<Movies movies={movies} onClickMovie={onClickMovie} />}
           />
           <Route
             path="/upcoming"
-            element={<HomeMovies movies={movies} onClickMoive={onClickMoive} />}
+            element={<Movies movies={movies} onClickMovie={onClickMovie} />}
           />
         </Routes>
       )}

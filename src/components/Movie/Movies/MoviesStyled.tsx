@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MoviesLayout = styled.section`
+export const MoviesLayout = styled.div`
   flex: 1;
 
   display: grid;

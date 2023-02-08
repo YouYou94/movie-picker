@@ -7,7 +7,7 @@ import {
   Nav,
   PageTemplate,
   Search,
-  SearchMovies,
+  Movies,
 } from '../../components';
 
 const POPULAR_URL = '/moviepicker/popular';
@@ -18,13 +18,15 @@ const SearchContainer = () => {
   const param = useParams();
   const navigate = useNavigate();
 
-  /* Nav */
+  /* SearchBox */
+  const [keyword, setKeyword] = useState<string>('');
 
+  /* Nav */
   const onClickPopular = () => navigate(POPULAR_URL);
 
   const onClickRecent = () => navigate(UPCOMING_URL);
 
-  /* Search */
+  /* Search Movies */
   const { movies, error, loading }: any = useAxios({
     sub_url: SEARCH,
     search_name: param.id ? param.id : '',
@@ -34,16 +36,18 @@ const SearchContainer = () => {
     if (error) alert(`에러 ! ${error}`);
   }, [error]);
 
+  console.log(movies);
+
   return (
     <PageTemplate>
       <Header />
-      <Search />
+      <Search state={keyword} setState={setKeyword} />
       <Nav
         searchKeyword={param.id ? param.id : ''}
         onClickPopular={onClickPopular}
         onClickRecent={onClickRecent}
       />
-      {loading ? <Loading /> : <SearchMovies />}
+      {loading ? <Loading /> : <Movies movies={movies} />}
     </PageTemplate>
   );
 };

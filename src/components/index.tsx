@@ -8,9 +8,8 @@ export { PageTemplate } from './common/Template/PageTemplate/PageTemplate';
 export { Header } from './Header/Header';
 export { Nav } from './Nav/Nav';
 
-export { HomeMovies } from './Home/HomeMovies/HomeMovies';
 export { DetailMovies } from './Movie/DetailMovies/DetailMovies';
-export { SearchMovies } from './Search/SearchMovies/SearchMovies';
+export { Movies } from './Movie/Movies/Movies';
 
 export { UserOperation } from './User/UserOperation';
 

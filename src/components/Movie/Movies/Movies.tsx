@@ -1,26 +1,26 @@
 import {
-  MovieBox,
   MoviesLayout,
+  MovieBox,
   MoviePoster,
   MovieCaption,
   MovieTitle,
   MovieReleaseDate,
   MovieOverview,
-} from './HomeMoviesStyled';
+} from './MoviesStyled';
 
 type MoivesProp = {
   movies: Array<any>;
-  onClickMoive: any;
+  onClickMovie?: any;
 };
 
-export const HomeMovies = ({ movies, onClickMoive }: MoivesProp) => {
+export const Movies = ({ movies, onClickMovie }: MoivesProp) => {
   return (
     <MoviesLayout>
       {movies?.map((movie) => {
         const { id, poster_path, title, release_date, overview } = movie;
 
         return (
-          <MovieBox key={id} id={id} onClick={onClickMoive}>
+          <MovieBox key={id} id={id} onClick={onClickMovie}>
             <MoviePoster
               poster={`https://image.tmdb.org/t/p/original/${poster_path}`}
             />
@@ -28,7 +28,7 @@ export const HomeMovies = ({ movies, onClickMoive }: MoivesProp) => {
               <MovieTitle>{title}</MovieTitle>
               <MovieReleaseDate>{release_date}</MovieReleaseDate>
               <MovieOverview>
-                {overview ? overview : 'overview 없음'}
+                {overview ? overview.substr(0, 50) + '...' : 'overview 없음'}
               </MovieOverview>
             </MovieCaption>
           </MovieBox>
