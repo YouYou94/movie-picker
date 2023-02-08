@@ -4,11 +4,15 @@ export const MoviesLayout = styled.section`
   flex: 1;
 
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr);
 
   padding: 0rem 5rem;
 
   gap: 2rem;
+
+  @media screen and (max-width: 1680px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
 
   @media screen and (max-width: 1400px) {
     grid-template-columns: repeat(5, 1fr);
@@ -18,12 +22,16 @@ export const MoviesLayout = styled.section`
     grid-template-columns: repeat(4, 1fr);
   }
 
-  @media screen and (max-width: 880px) {
+  @media screen and (max-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
+
+    padding: 0rem 3rem;
   }
 
   @media screen and (max-width: 560px) {
     grid-template-columns: repeat(2, 1fr);
+
+    padding: 0rem 2rem;
   }
 
   @media screen and (max-width: 480px) {

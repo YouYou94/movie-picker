@@ -23,6 +23,22 @@ export const SearchBox = styled.div`
   padding: 0 1rem;
 
   background-color: rgb(255, 255, 255);
+
+  @media screen and (max-width: 1254px) {
+    width: 40rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 34rem;
+  }
+
+  @media screen and (max-width: 560px) {
+    width: 28rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 22rem;
+  }
 `;
 
 export const SearchInput = styled.input`

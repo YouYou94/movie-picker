@@ -5,8 +5,10 @@ export { PageTemplate } from './common/Template/PageTemplate/PageTemplate';
 
 /* components */
 
+export { Header } from './Header/Header';
+export { Nav } from './Nav/Nav';
+
 /* Home */
-export { HomeNav } from './Home/HomeNav/HomeNav';
 export { HomeMovies } from './Home/HomeMovies/HomeMovies';
 
 /* Movie */

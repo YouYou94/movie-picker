@@ -1,23 +1,18 @@
-import {
-  NavLayout,
-  NavBox,
-  SearchResultBox,
-  NavHashTag,
-} from './HomeNavStyled';
+import { NavLayout, NavBox, SearchResultBox, NavHashTag } from './NavStyled';
 
-type HomeNavProps = {
-  isPopular: boolean;
-  isUpcoming: boolean;
-  onClickPopular: any;
-  onClickRecent: any;
+type NavProps = {
+  isPopular?: boolean;
+  isUpcoming?: boolean;
+  onClickPopular?: any;
+  onClickRecent?: any;
 };
 
-export const HomeNav = ({
+export const Nav = ({
   isPopular,
   isUpcoming,
   onClickPopular,
   onClickRecent,
-}: HomeNavProps) => {
+}: NavProps) => {
   return (
     <NavLayout>
       <NavBox>

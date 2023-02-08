@@ -1,13 +1,21 @@
 import styled from 'styled-components';
 
 export const NavLayout = styled.nav`
-  height: 5rem;
+  height: 7rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   padding: 0 5rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 0rem 3rem;
+  }
+
+  @media screen and (max-width: 560px) {
+    padding: 0rem 2rem;
+  }
 `;
 
 export const NavBox = styled.div`
@@ -18,8 +26,8 @@ export const NavBox = styled.div`
 
 export const SearchResultBox = styled.div``;
 
-export const NavHashTag = styled.div<{ isSelect: boolean }>`
-  width: 7rem;
+export const NavHashTag = styled.div<{ isSelect?: boolean }>`
+  width: 5rem;
   height: 2.5rem;
 
   display: flex;
