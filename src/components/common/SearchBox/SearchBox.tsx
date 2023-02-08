@@ -4,7 +4,7 @@ import {
   SearchInput,
   SearchButton,
   SearchImage,
-} from './SearchStyled';
+} from './SearchBoxStyled';
 
 type SearchProps = {
   state?: string;
