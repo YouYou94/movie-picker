@@ -7,6 +7,7 @@ const TMDB_KEY = process.env.REACT_APP_API_KEY;
 
 const POPULAR = 'movie/popular';
 const UPCOMING = 'movie/upcoming';
+const SEARCH = 'search/movie';
 
 type AxoisProps = {
   sub_url: string;
@@ -28,7 +29,7 @@ const useAxios = ({ sub_url, search_name }: AxoisProps) => {
   ) => {
     let query = '';
 
-    if (!name) query = `$query=${name}`;
+    if (name) query = `&query=${name}`;
 
     await axios
       .get(`${sub_url}?api_key=${TMDB_KEY}&language=ko-KR&page=1${query}`)
@@ -43,7 +44,8 @@ const useAxios = ({ sub_url, search_name }: AxoisProps) => {
             );
           });
 
-        if (sub_url === UPCOMING || sub_url === POPULAR) setMovies(results);
+        if (sub_url === UPCOMING || sub_url === POPULAR || sub_url === SEARCH)
+          setMovies(results);
         else setMovies(res.data);
       })
       .catch((error) => setError(error));

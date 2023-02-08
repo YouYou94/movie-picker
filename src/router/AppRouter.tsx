@@ -7,8 +7,8 @@ const AppRouter = () => {
       <Routes>
         <Route path="/*" element={<Navigate to="/moviepicker" />} />
         <Route path="/moviepicker/*" element={<Home />} />
-        <Route path="/moviepicker/*" element={<Movie />} />
-        <Route path="/moviepicker/search/*" element={<Search />} />
+        <Route path="/moviepicker/movie/:id" element={<Movie />} />
+        <Route path="/moviepicker/search/:id" element={<Search />} />
       </Routes>
     </BrowserRouter>
   );

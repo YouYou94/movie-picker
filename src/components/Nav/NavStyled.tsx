@@ -27,7 +27,7 @@ export const NavBox = styled.div`
 export const SearchResultBox = styled.div``;
 
 export const NavHashTag = styled.div<{ isSelect?: boolean }>`
-  width: 5rem;
+  min-width: 5rem;
   height: 2.5rem;
 
   display: flex;
@@ -35,6 +35,7 @@ export const NavHashTag = styled.div<{ isSelect?: boolean }>`
   align-items: center;
 
   border-radius: 0.5rem;
+  padding: 0 1rem;
 
   background-color: ${(prop) =>
     prop.isSelect ? 'rgb(31, 41, 55)' : 'rgb(224, 226, 233)'};

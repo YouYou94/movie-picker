@@ -5,14 +5,14 @@ import {
   SearchInput,
   SearchButton,
   SearchImage,
-} from './SearchBoxStyled';
+} from './SearchBarStyled';
 
 type SearchProps = {
   state: string;
   setState: any;
 };
 
-export const SearchBox = ({ state, setState }: SearchProps) => {
+export const SearchBar = ({ state, setState }: SearchProps) => {
   const navigate = useNavigate();
 
   const onChangeSearchKeyword = (

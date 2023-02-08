@@ -3,6 +3,7 @@ import { NavLayout, NavBox, SearchResultBox, NavHashTag } from './NavStyled';
 type NavProps = {
   isPopular?: boolean;
   isUpcoming?: boolean;
+  searchKeyword?: string;
   onClickPopular?: any;
   onClickRecent?: any;
 };
@@ -10,6 +11,7 @@ type NavProps = {
 export const Nav = ({
   isPopular,
   isUpcoming,
+  searchKeyword,
   onClickPopular,
   onClickRecent,
 }: NavProps) => {
@@ -23,7 +25,15 @@ export const Nav = ({
           #최신
         </NavHashTag>
       </NavBox>
-      <SearchResultBox></SearchResultBox>
+      <SearchResultBox>
+        {searchKeyword ? (
+          <NavHashTag isSelect={Boolean(searchKeyword)}>
+            #검색 #{searchKeyword}
+          </NavHashTag>
+        ) : (
+          <></>
+        )}
+      </SearchResultBox>
     </NavLayout>
   );
 };
