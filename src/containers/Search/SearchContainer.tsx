@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import useAxios from '../../hooks/useAxios';
-import { Header, Loading, Nav, PageTemplate, Search } from '../../components';
+import {
+  Header,
+  Loading,
+  Nav,
+  PageTemplate,
+  Search,
+  SearchMovies,
+} from '../../components';
 
 const POPULAR_URL = '/moviepicker/popular';
 const UPCOMING_URL = '/moviepicker/upcoming';
@@ -36,7 +43,7 @@ const SearchContainer = () => {
         onClickPopular={onClickPopular}
         onClickRecent={onClickRecent}
       />
-      {loading ? <Loading /> : <></>}
+      {loading ? <Loading /> : <SearchMovies />}
     </PageTemplate>
   );
 };

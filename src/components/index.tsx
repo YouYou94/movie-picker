@@ -8,14 +8,10 @@ export { PageTemplate } from './common/Template/PageTemplate/PageTemplate';
 export { Header } from './Header/Header';
 export { Nav } from './Nav/Nav';
 
-/* Home */
 export { HomeMovies } from './Home/HomeMovies/HomeMovies';
-
-/* Movie */
 export { DetailMovies } from './Movie/DetailMovies/DetailMovies';
+export { SearchMovies } from './Search/SearchMovies/SearchMovies';
 
-/* User */
 export { UserOperation } from './User/UserOperation';
 
-/* Picker */
 export { Picker } from './Picker/Picker';
