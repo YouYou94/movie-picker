@@ -1,5 +1,7 @@
+import { SearchContainer } from '../containers';
+
 const Search = () => {
-  return <></>;
+  return <SearchContainer />;
 };
 
 export default Search;
