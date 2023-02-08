@@ -6,7 +6,7 @@ import {
   Loading,
   Nav,
   PageTemplate,
-  Search,
+  SearchBar,
   Movies,
 } from '../../components';
 
@@ -41,7 +41,7 @@ const SearchContainer = () => {
   return (
     <PageTemplate>
       <Header />
-      <Search state={keyword} setState={setKeyword} />
+      <SearchBar state={keyword} setState={setKeyword} />
       <Nav
         searchKeyword={param.id ? param.id : ''}
         onClickPopular={onClickPopular}

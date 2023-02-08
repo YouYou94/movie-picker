@@ -1,6 +1,6 @@
 /* common components */
 export { Loading } from './common/Loading/Loading';
-export { Search } from './common/SearchBox/SearchBox';
+export { SearchBar } from './common/SearchBar/SearchBar';
 export { PageTemplate } from './common/Template/PageTemplate/PageTemplate';
 
 /* components */

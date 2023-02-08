@@ -3,7 +3,7 @@ import { Route, Routes, useNavigate } from 'react-router';
 import useAxios from '../../hooks/useAxios';
 import {
   Nav,
-  Search,
+  SearchBar,
   Movies,
   Loading,
   PageTemplate,
@@ -59,7 +59,7 @@ const HomeContainer = () => {
   return (
     <PageTemplate>
       <Header />
-      <Search state={keyword} setState={setKeyword} />
+      <SearchBar state={keyword} setState={setKeyword} />
       <Nav
         isPopular={isPopular}
         isUpcoming={isUpcoming}
