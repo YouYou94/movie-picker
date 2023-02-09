@@ -12,8 +12,8 @@ export const Layout = styled.div`
 `;
 
 export const BackgroundPoster = styled.img`
+  position: absolute;
+
   width: 100%;
   height: 100%;
-
-  z-index: -1;
 `;

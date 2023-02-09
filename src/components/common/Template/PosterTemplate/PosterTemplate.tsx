@@ -7,7 +7,7 @@ export const PosterTemplate = ({
   background_path,
 }: TemplateInterface) => {
   return (
-    <Layout>
+    <>
       <BackgroundPoster
         src={
           background_path
@@ -16,8 +16,10 @@ export const PosterTemplate = ({
         }
         alt={background_path}
       />
-      {header}
-      {children}
-    </Layout>
+      <Layout>
+        {header}
+        {children}
+      </Layout>
+    </>
   );
 };
