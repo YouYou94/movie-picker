@@ -72,11 +72,11 @@ const HomeContainer = () => {
         <Routes>
           <Route
             path="/*"
-            element={<Movies movies={movies} onClickMovie={onClickMovie} />}
+            element={<Movies movies={movies} onHandleClick={onClickMovie} />}
           />
           <Route
             path="/upcoming"
-            element={<Movies movies={movies} onClickMovie={onClickMovie} />}
+            element={<Movies movies={movies} onHandleClick={onClickMovie} />}
           />
         </Routes>
       )}

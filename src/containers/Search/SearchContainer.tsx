@@ -32,6 +32,12 @@ const SearchContainer = () => {
     search_name: param.id ? param.id : '',
   });
 
+  const onClickMovie = (event: React.MouseEvent<HTMLElement>) => {
+    const { id } = event.currentTarget;
+
+    navigate(`/moviepicker/movie/${id}`);
+  };
+
   useEffect(() => {
     if (error) alert(`에러 ! ${error}`);
   }, [error]);
@@ -47,7 +53,11 @@ const SearchContainer = () => {
         onClickPopular={onClickPopular}
         onClickRecent={onClickRecent}
       />
-      {loading ? <Loading /> : <Movies movies={movies} />}
+      {loading ? (
+        <Loading />
+      ) : (
+        <Movies movies={movies} onHandleClick={onClickMovie} />
+      )}
     </PageTemplate>
   );
 };

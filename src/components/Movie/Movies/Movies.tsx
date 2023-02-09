@@ -10,17 +10,17 @@ import {
 
 type MoivesProp = {
   movies: Array<any>;
-  onClickMovie?: any;
+  onHandleClick?: any;
 };
 
-export const Movies = ({ movies, onClickMovie }: MoivesProp) => {
+export const Movies = ({ movies, onHandleClick }: MoivesProp) => {
   return (
     <MoviesLayout>
       {movies?.map((movie) => {
         const { id, poster_path, title, release_date, overview } = movie;
 
         return (
-          <MovieBox key={id} id={id} onClick={onClickMovie}>
+          <MovieBox key={id} id={id} onClick={onHandleClick}>
             <MoviePoster
               poster={`https://image.tmdb.org/t/p/original/${poster_path}`}
             />
