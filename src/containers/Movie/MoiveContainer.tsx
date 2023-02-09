@@ -2,7 +2,14 @@ import useAxios from '../../hooks/useAxios';
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
 import _ from 'lodash';
-import { DetailMovies, Loading, Picker, UserOperation } from '../../components';
+import {
+  DetailHeader,
+  DetailMovies,
+  Loading,
+  PageTemplate,
+  Picker,
+  UserOperation,
+} from '../../components';
 import { useRecoilState } from 'recoil';
 import { displayState, pickerState } from '../../recoil/atom';
 
@@ -30,7 +37,12 @@ const MovieContainer = () => {
     if (error) alert(`에러! ${error}`);
   }, [error]);
 
-  return <></>;
+  return (
+    <PageTemplate>
+      <DetailHeader />
+      {}
+    </PageTemplate>
+  );
 };
 
 export default MovieContainer;

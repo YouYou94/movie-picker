@@ -6,6 +6,7 @@ export { PageTemplate } from './common/Template/PageTemplate/PageTemplate';
 /* components */
 
 export { Header } from './Header/base/Header';
+export { DetailHeader } from './Header/detail/DetailHeader';
 export { Nav } from './Nav/Nav';
 
 export { DetailMovies } from './Movie/DetailMovies/DetailMovies';
