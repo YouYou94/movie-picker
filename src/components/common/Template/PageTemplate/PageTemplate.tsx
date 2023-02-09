@@ -1,13 +1,9 @@
 import { TemplateInterface } from '../type';
 import { Layout } from './PageTemplateStyled';
 
-export const PageTemplate = ({
-  header,
-  children,
-  isMargin,
-}: TemplateInterface) => {
+export const PageTemplate = ({ header, children }: TemplateInterface) => {
   return (
-    <Layout isMargin={isMargin}>
+    <Layout>
       {header}
       {children}
     </Layout>

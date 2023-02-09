@@ -57,7 +57,7 @@ const HomeContainer = () => {
   }, [error]);
 
   return (
-    <PageTemplate isMargin={true}>
+    <PageTemplate>
       <Header />
       <SearchBar state={keyword} setState={setKeyword} />
       <Nav

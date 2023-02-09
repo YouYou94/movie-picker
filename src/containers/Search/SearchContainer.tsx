@@ -39,7 +39,7 @@ const SearchContainer = () => {
   console.log(movies);
 
   return (
-    <PageTemplate isMargin={true}>
+    <PageTemplate>
       <Header />
       <SearchBar state={keyword} setState={setKeyword} />
       <Nav
