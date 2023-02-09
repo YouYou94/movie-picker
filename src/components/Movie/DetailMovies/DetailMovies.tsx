@@ -17,10 +17,10 @@ import {
 
 type DetailMovieProps = {
   movies?: any;
-  onClickPicker: any;
+  onHandlerClick: any;
 };
 
-export const DetailMovies = ({ movies, onClickPicker }: DetailMovieProps) => {
+export const DetailMovies = ({ movies, onHandlerClick }: DetailMovieProps) => {
   const {
     backdrop_path,
     poster_path,
@@ -59,7 +59,7 @@ export const DetailMovies = ({ movies, onClickPicker }: DetailMovieProps) => {
             </OverviewBox>
             <OverviewLabel>{overview}</OverviewLabel>
             <PickerBox>
-              <PickerButton onClick={onClickPicker}>PICKER</PickerButton>
+              <PickerButton onClick={onHandlerClick}>PICKER</PickerButton>
             </PickerBox>
           </OverviewContainer>
         </DescriptionContainer>

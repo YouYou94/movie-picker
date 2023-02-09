@@ -39,7 +39,11 @@ const MovieContainer = () => {
   return (
     <PosterTemplate background_path={movies ? movies.backdrop_path : ''}>
       <DetailHeader />
-      {}
+      {loading ? (
+        <Loading />
+      ) : (
+        <DetailMovies movies={movies} onHandlerClick={onClickPicker} />
+      )}
     </PosterTemplate>
   );
 };
