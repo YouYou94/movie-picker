@@ -6,8 +6,8 @@ import {
   DetailHeader,
   DetailMovies,
   Loading,
-  PageTemplate,
   Picker,
+  PosterTemplate,
   UserOperation,
 } from '../../components';
 import { useRecoilState } from 'recoil';
@@ -38,10 +38,10 @@ const MovieContainer = () => {
   }, [error]);
 
   return (
-    <PageTemplate>
+    <PosterTemplate background_path={movies ? movies.backdrop_path : ''}>
       <DetailHeader />
       {}
-    </PageTemplate>
+    </PosterTemplate>
   );
 };
 

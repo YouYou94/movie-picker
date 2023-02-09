@@ -2,6 +2,7 @@
 export { Loading } from './common/Loading/Loading';
 export { SearchBar } from './common/SearchBar/SearchBar';
 export { PageTemplate } from './common/Template/PageTemplate/PageTemplate';
+export { PosterTemplate } from './common/Template/PosterTemplate/PosterTemplate';
 
 /* components */
 
