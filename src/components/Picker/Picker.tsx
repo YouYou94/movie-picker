@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router';
 import {
   PickerContainer,
   PickerHeader,
@@ -7,7 +8,8 @@ import {
   PickerItem,
   PosterBox,
   PosterImg,
-  PickerMovieTitle,
+  PickerMovieCaptionBox,
+  CaptionLabel,
 } from './PickerStyled';
 
 type PickerProps = {
@@ -17,9 +19,16 @@ type PickerProps = {
 };
 
 export const Picker = ({ picker, isDisplay, setIsDisplay }: PickerProps) => {
+  const navigate = useNavigate();
   const pickerRef = useRef<HTMLDivElement>(null);
 
   const onClickPickerExit = () => setIsDisplay(false);
+
+  const onClickPickerItem = (event: React.MouseEvent<HTMLLIElement>) => {
+    const { id } = event.currentTarget;
+
+    navigate(`/moviepicker/movie/${id}`);
+  };
 
   /* 모달 영역 밖 클릭 시 모달창 닫힘 기능 */
   const handleClickOutSide = (event: any) => {
@@ -42,16 +51,24 @@ export const Picker = ({ picker, isDisplay, setIsDisplay }: PickerProps) => {
       </PickerHeader>
       <PickerList>
         {picker?.map((pickermovie) => {
-          const { id, poster_path, title } = pickermovie;
+          const { id, poster_path, title, release_date, genres } = pickermovie;
           return (
-            <PickerItem key={id}>
+            <PickerItem key={id} id={id} onClick={onClickPickerItem}>
               <PosterBox>
                 <PosterImg
                   src={`https://image.tmdb.org/t/p/original/${poster_path}`}
                   alt={`${poster_path}`}
                 />
               </PosterBox>
-              <PickerMovieTitle>{title}</PickerMovieTitle>
+              <PickerMovieCaptionBox>
+                <CaptionLabel>{title}</CaptionLabel>
+                <CaptionLabel>{release_date}</CaptionLabel>
+                <CaptionLabel>
+                  {genres.map((genre: any) => {
+                    return genre?.name + ' ';
+                  })}
+                </CaptionLabel>
+              </PickerMovieCaptionBox>
             </PickerItem>
           );
         })}
