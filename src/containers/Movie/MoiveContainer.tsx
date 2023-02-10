@@ -25,10 +25,13 @@ const MovieContainer = () => {
   const [isDisplay, setIsDisplay] = useState(false);
 
   const onClickPicker = () => {
-    const { title, poster_path } = movies;
+    const { title, poster_path, release_date, genres } = movies;
 
     setPicker(
-      _.uniqBy([...picker, { id: param.id, title, poster_path }], 'id'),
+      _.uniqBy(
+        [...picker, { id: param.id, title, poster_path, release_date, genres }],
+        'id',
+      ),
     );
   };
 
