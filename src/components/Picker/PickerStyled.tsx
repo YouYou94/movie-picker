@@ -8,7 +8,7 @@ export const PickerContainer = styled.div<{ isDisplay?: boolean }>`
 
   right: 0;
 
-  width: 20rem;
+  width: 25rem;
   height: 100%;
 
   flex-direction: column;
@@ -28,6 +28,7 @@ export const PickerHeader = styled.div`
   align-items: center;
 
   padding: 0 2rem;
+  border-bottom: 3px solid rgb(204, 204, 204, 0.5);
 `;
 
 export const ExitImage = styled.img.attrs({
@@ -43,11 +44,11 @@ export const PickerList = styled.ul`
   display: flex;
   flex-direction: column;
 
-  gap: 1rem;
+  gap: 0.5rem;
 `;
 
 export const PickerItem = styled.li`
-  height: 6rem;
+  height: 7rem;
 
   display: flex;
   align-items: center;
@@ -57,6 +58,12 @@ export const PickerItem = styled.li`
   color: white;
 
   gap: 1rem;
+
+  cursor: pointer;
+
+  :hover {
+    background-color: rgb(224, 226, 233, 0.1);
+  }
 `;
 
 export const PosterBox = styled.div`
@@ -64,8 +71,6 @@ export const PosterBox = styled.div`
   height: 6rem;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 export const PosterImg = styled.img`
@@ -74,6 +79,19 @@ export const PosterImg = styled.img`
   border-radius: 0.7rem;
 `;
 
-export const PickerMovieTitle = styled.label`
+export const PickerMovieCaptionBox = styled.div`
   flex: 1;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export const CaptionLabel = styled.label`
+  flex: 1;
+
+  display: flex;
+  align-items: center;
 `;
