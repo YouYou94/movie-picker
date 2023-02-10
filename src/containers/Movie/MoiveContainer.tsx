@@ -1,6 +1,6 @@
 import useAxios from '../../hooks/useAxios';
 import { useParams } from 'react-router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import _ from 'lodash';
 import {
   DetailHeader,
@@ -10,7 +10,7 @@ import {
   PosterTemplate,
 } from '../../components';
 import { useRecoilState } from 'recoil';
-import { displayState, pickerState } from '../../recoil/atom';
+import { pickerState } from '../../recoil/atom';
 
 const MOVIE = 'movie/';
 
@@ -22,7 +22,7 @@ const MovieContainer = () => {
   });
 
   const [picker, setPicker] = useRecoilState(pickerState);
-  const [isDisplay, setIsDisplay] = useRecoilState(displayState);
+  const [isDisplay, setIsDisplay] = useState(false);
 
   const onClickPicker = () => {
     const { title, poster_path } = movies;
@@ -38,7 +38,12 @@ const MovieContainer = () => {
 
   return (
     <PosterTemplate background_path={movies ? movies.backdrop_path : ''}>
-      <DetailHeader />
+      <Picker
+        picker={picker}
+        isDisplay={isDisplay}
+        setIsDisplay={setIsDisplay}
+      />
+      <DetailHeader setIsDisplay={setIsDisplay} />
       {loading ? (
         <Loading />
       ) : (

@@ -18,8 +18,6 @@ type PickerProps = {
 export const Picker = ({ picker, isDisplay, setIsDisplay }: PickerProps) => {
   const onClickPickerExit = () => setIsDisplay(false);
 
-  console.log(picker);
-
   return (
     <PickerContainer isDisplay={isDisplay}>
       <PickerHeader>

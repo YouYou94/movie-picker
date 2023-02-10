@@ -27,14 +27,14 @@ export const PickerHeader = styled.div`
   justify-content: flex-end;
   align-items: center;
 
-  padding: 0 1rem;
+  padding: 0 2rem;
 `;
 
 export const ExitImage = styled.img.attrs({
   src: `${Exit}`,
 })`
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
 
   cursor: pointer;
 `;
