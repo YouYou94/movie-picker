@@ -9,7 +9,7 @@ import {
 export const DetailHeader = ({ setIsDisplay }: any) => {
   const navigate = useNavigate();
 
-  const onClickBack = () => navigate(-1);
+  const onClickBack = () => navigate('/moviepicker');
 
   const onClickDisplayPicker = () => setIsDisplay(true);
 
