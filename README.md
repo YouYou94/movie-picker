@@ -12,9 +12,14 @@ Rest API를 이용하여 TMDB 영화 데이터를 받아와 검색
 </br>
 </br>
 
-## 2. 사용 기술 및 배포
+## 2. 개발 기간, 사용 기술 및 배포
 
-### 2.1 사용 기술
+### 2.1 개발 기간
+
+- 1차 - _22. 12. 15 ~ 23. 02. 10_
+- 2차 - _준비중_
+
+### 2.2 사용 기술
 
 - TypeScript
 - React
@@ -23,9 +28,9 @@ Rest API를 이용하여 TMDB 영화 데이터를 받아와 검색
 - Recoil
 - Lodash
 
-### 2.2 배포
+### 2.3 배포
 
-- Demo : http://YouYou94.github.io/movie-picker/ _(준비중)_
+- Demo : http://YouYou94.github.io/movie-picker/
 
 #### 배운점
 
