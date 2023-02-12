@@ -1,6 +1,6 @@
 # Movie Picker
 
-Rest API를 이용하여 TMDB 영화 데이터를 받아와 검색
+Axios 사용 및 TMDB API 비동기 통신하여 얻은 데이터를 이용한 영화 검색 웹 서비스. TypeScript를 사용하여 컴포넌트 및 기능 구현.
 
 </br>
 </br>
