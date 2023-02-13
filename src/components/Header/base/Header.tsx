@@ -1,14 +1,12 @@
 import { useNavigate } from 'react-router';
-import { HeaderLayout, PageTitle } from './HeaderStyled';
+import { Layout, Title } from './HeaderStyled';
 
 export const Header = () => {
   const navigate = useNavigate();
 
   return (
-    <HeaderLayout>
-      <PageTitle onClick={() => navigate('/moviepicker')}>
-        MOVIEPICKER
-      </PageTitle>
-    </HeaderLayout>
+    <Layout>
+      <Title onClick={() => navigate('/moviepicker')}>MOVIEPICKER</Title>
+    </Layout>
   );
 };

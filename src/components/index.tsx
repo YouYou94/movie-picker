@@ -14,3 +14,6 @@ export { DetailMovies } from './Movie/DetailMovies/DetailMovies';
 export { Movies } from './Movie/Movies/Movies';
 
 export { Picker } from './Picker/Picker';
+
+/* 리펙터링 */
+export { HeaderRefactor } from './Header/base/HeaderRefactor';
