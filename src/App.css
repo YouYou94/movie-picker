@@ -13,6 +13,21 @@ body {
   color: black;
 }
 
+body::-webkit-scrollbar {
+  width: 0.5rem; /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: #217af4; /* 스크롤바의 색상 */
+
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(33, 122, 244, 0.2); /*스크롤바 뒷 배경 색상*/
+}
+
 h1,
 h2,
 h3,
@@ -58,4 +73,12 @@ a:hover {
   background-color: rgb(48, 191, 148);
   background-color: rgb(2, 53, 53);
   background-color: rgb(224, 226, 233);
+}
+
+.practice2 {
+  background-color: rgb(17, 17, 17); /* Hedaer */
+  background-color: rgb(89, 89, 89); /* Section */
+  background-color: rgb(140, 140, 140);
+  background-color: rgb(242, 242, 242); /* Hover */
+  background-color: rgb(187, 208, 233); /* Font */
 }
