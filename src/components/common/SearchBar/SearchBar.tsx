@@ -8,8 +8,8 @@ import {
 } from './SearchBarStyled';
 
 type SearchProps = {
-  state: string;
-  setState: any;
+  state?: string;
+  setState?: any;
 };
 
 export const SearchBar = ({ state, setState }: SearchProps) => {
