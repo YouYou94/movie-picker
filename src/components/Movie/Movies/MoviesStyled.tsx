@@ -86,7 +86,8 @@ export const MovieBox = styled.article`
 `;
 
 export const MoviePoster = styled.div<{ poster?: string }>`
-  flex: 1;
+  width: 240px;
+  height: 360px;
 
   background-image: url(${(prop) => prop.poster});
   background-repeat: no-repeat;
@@ -106,3 +107,25 @@ export const MovieOverview = styled.label`
 
   cursor: pointer;
 `;
+
+export const Layout = styled.section`
+  height: 500px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 2rem 5rem;
+
+  box-shadow: 0px 100px 50px 0px rgb(17, 17, 17, 0.2),
+    0px -40px 50px 0px rgb(17, 17, 17, 0.2);
+
+  gap: 1rem;
+`;
+
+export const Title = styled.h2`
+  font-family: 'Dosis';
+
+  color: rgb(242, 242, 242);
+`;
+
+export const CarouselBox = styled.div``;

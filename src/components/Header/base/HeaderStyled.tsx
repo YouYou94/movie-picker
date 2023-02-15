@@ -12,7 +12,7 @@ export const Layout = styled.header`
   display: flex;
   align-items: center;
 
-  background-color: rgb(17, 17, 17, 0.9);
+  background-color: rgb(17, 17, 17);
 
   z-index: 1;
 `;

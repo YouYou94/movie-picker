@@ -8,6 +8,8 @@ export const SearchLayout = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background-color: rgb(17, 17, 17);
 `;
 
 export const SearchBox = styled.div`
