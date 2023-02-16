@@ -1,50 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { Route, Routes, useNavigate } from 'react-router';
-import useAxios from '../../hooks/useAxios';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router';
 import {
-  Nav,
-  SearchBar,
-  Movies,
+  Footer,
+  HeaderRefactor,
   Loading,
+  Movies,
   PageTemplate,
-  Header,
+  SearchBar,
+  Trailer,
 } from '../../components';
-
-const POPULAR = 'movie/popular';
-const POPULAR_URL = '/moviepicker/popular';
-
-const UPCOMING = 'movie/upcoming';
-const UPCOMING_URL = '/moviepicker/upcoming';
+import { POPULAR, UPCOMING } from '../../Constants';
+import useAxios from '../../hooks/useAxios';
 
 const HomeContainer = () => {
   const navigate = useNavigate();
 
-  /* Search 동작 */
-  const [keyword, setKeyword] = useState<string>('');
+  const { popularMovies, popularError, popularLoading } = useAxios({
+    type: POPULAR,
+  });
 
-  /* Nav 동작*/
-  const [isPopular, setIsPupular] = useState<boolean>(true);
-  const [isUpcoming, setIsUpcoming] = useState<boolean>(false);
-  const [nowCursor, setNowCursor] = useState<string>(POPULAR);
-
-  const onClickPopular = () => {
-    navigate(POPULAR_URL);
-
-    setNowCursor(POPULAR);
-    setIsPupular(true);
-    setIsUpcoming(false);
-  };
-
-  const onClickRecent = () => {
-    navigate(UPCOMING_URL);
-
-    setNowCursor(UPCOMING);
-    setIsPupular(false);
-    setIsUpcoming(true);
-  };
-
-  /* Movies */
-  const { movies, error, loading }: any = useAxios({ sub_url: nowCursor });
+  const { upcomingMovies, upcomingError, upcomingLoading } = useAxios({
+    type: UPCOMING,
+  });
 
   const onClickMovie = (event: React.MouseEvent<HTMLElement>) => {
     const { id } = event.currentTarget;
@@ -53,33 +30,37 @@ const HomeContainer = () => {
   };
 
   useEffect(() => {
-    if (error) alert(`에러 ! ${error}`);
-  }, [error]);
+    if (popularError) alert(popularError);
+  }, [popularError]);
+
+  useEffect(() => {
+    if (upcomingError) alert(upcomingError);
+  }, [upcomingError]);
 
   return (
     <PageTemplate>
-      <Header />
-      <SearchBar state={keyword} setState={setKeyword} />
-      <Nav
-        isPopular={isPopular}
-        isUpcoming={isUpcoming}
-        onClickPopular={onClickPopular}
-        onClickRecent={onClickRecent}
-      />
-      {loading ? (
+      <HeaderRefactor />
+      <Trailer />
+      <SearchBar />
+      {popularLoading ? (
         <Loading />
       ) : (
-        <Routes>
-          <Route
-            path="/*"
-            element={<Movies movies={movies} onHandleClick={onClickMovie} />}
-          />
-          <Route
-            path="/upcoming"
-            element={<Movies movies={movies} onHandleClick={onClickMovie} />}
-          />
-        </Routes>
+        <Movies
+          type={POPULAR}
+          movies={popularMovies}
+          onHandleClick={onClickMovie}
+        />
       )}
+      {upcomingLoading ? (
+        <Loading />
+      ) : (
+        <Movies
+          type={UPCOMING}
+          movies={upcomingMovies}
+          onHandleClick={onClickMovie}
+        />
+      )}
+      <Footer />
     </PageTemplate>
   );
 };
