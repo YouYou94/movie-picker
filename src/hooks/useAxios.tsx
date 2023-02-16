@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { POPULAR, UPCOMING, SEARCH } from '../Constants';
+import { POPULAR, UPCOMING, SEARCH, GET } from '../Constants';
 
 axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 
@@ -10,16 +10,41 @@ type AxoisProps = {
   sub_url?: string;
   search_name?: string | null | undefined;
   type?: string;
+  id?: string;
 };
 
 // search/movie?api_key=${TMDB_KEY}&language=ko-KR&page=1&query=${name}
 // movie/popular?api_key=${TMDB_KEY}&language=ko-KR&page=1
 // movie/upcoming?api_key=${TMDB_KEY}&language=ko-KR&page=1
 
-const useAxios = ({ sub_url, search_name, type }: AxoisProps) => {
+const useAxios = ({ sub_url, search_name, type, id }: AxoisProps) => {
   const [movies, setMovies] = useState<any>([]);
   const [error, setError] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
+
+  /* Get Movie */
+  const getMovie = async () => {
+    await axios
+      .get(`movie/${id}?api_key=${TMDB_KEY}&language=ko-KR&page=1`)
+      .then((res) => {
+        const { results } = res.data;
+
+        if (sub_url === UPCOMING)
+          results.sort(function (a: any, b: any) {
+            return (
+              Number(b.release_date.replaceAll('-', '')) -
+              Number(a.release_date.replaceAll('-', ''))
+            );
+          });
+
+        if (sub_url === UPCOMING || sub_url === POPULAR || sub_url === SEARCH)
+          setMovies(results);
+        else setMovies(res.data);
+      })
+      .catch((error) => setError(error));
+
+    setLoading(false);
+  };
 
   /* Popular Movies */
   const [popularMovies, setPopularMovies] = useState<any>([]);
@@ -85,7 +110,8 @@ const useAxios = ({ sub_url, search_name, type }: AxoisProps) => {
   };
 
   useEffect(() => {
-    if (type === POPULAR) getPopularMovie();
+    if (type === GET) getMovie();
+    else if (type === POPULAR) getPopularMovie();
     else if (type === UPCOMING) getUpcomingMovies();
     else if (type === SEARCH) getSearchMovies();
   }, [type]);
