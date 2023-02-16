@@ -17,3 +17,5 @@ export { Picker } from './Picker/Picker';
 
 /* 리펙터링 */
 export { HeaderRefactor } from './Header/base/HeaderRefactor';
+export { Trailer } from './Trailer/Trailer';
+export { Footer } from './Footer/Footer';
