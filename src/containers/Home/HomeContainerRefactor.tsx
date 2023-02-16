@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import {
+  Footer,
   HeaderRefactor,
   Loading,
   Movies,
@@ -42,6 +43,7 @@ const HomeContainer_ = () => {
       ) : (
         <Movies type={UPCOMING} movies={upcomingMovies} />
       )}
+      <Footer />
     </PageTemplate>
   );
 };
