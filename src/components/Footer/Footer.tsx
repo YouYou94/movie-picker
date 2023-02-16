@@ -1,3 +1,5 @@
+import { Layout } from './FooterStyled';
+
 export const Footer = () => {
-  return <></>;
+  return <Layout></Layout>;
 };
