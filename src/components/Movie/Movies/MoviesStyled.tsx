@@ -99,17 +99,18 @@ export const MovieOverview = styled.label`
   cursor: pointer;
 `;
 
+/* New */
 export const Layout = styled.section`
   position: relative;
 
-  height: 500px;
+  height: 600px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  margin-left: 5rem;
-  margin-right: 5rem;
+  margin-left: 8rem;
+  margin-right: 8rem;
   border-bottom: 2px solid rgb(204, 204, 204);
 
   overflow: hidden;
@@ -118,18 +119,24 @@ export const Layout = styled.section`
 `;
 
 export const CarouselBox = styled.div`
-  width: 500%;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
 
+  border-radius: 0.7rem;
+
+  background-color: rgb(17, 17, 17, 0.1);
+
   transition: all 0.5s ease-in-out;
 `;
 
-// 16.7%씩
-
 export const MoviesBox = styled.div`
+  width: 100%;
+  height: 400px;
+
   display: flex;
+  align-items: center;
 
   gap: 1rem;
 `;
@@ -142,6 +149,8 @@ export const Title = styled.h2`
 `;
 
 export const MoviePoster = styled.div<{ poster?: string }>`
+  flex-shrink: 0;
+
   width: 240px;
   height: 360px;
 
@@ -155,7 +164,9 @@ export const MoviePoster = styled.div<{ poster?: string }>`
 export const PrevButton = styled.button`
   position: absolute;
 
-  width: 4rem;
+  left: 0.2rem;
+
+  width: 2rem;
   height: 4rem;
 
   display: flex;
@@ -163,25 +174,25 @@ export const PrevButton = styled.button`
   align-items: center;
 
   border: none;
-  border-radius: 50%;
+  border-radius: 1rem;
 
   color: white;
 
-  background-color: rgb(255, 255, 255, 0.3);
+  background-color: rgb(255, 255, 255, 0.5);
 
   z-index: 1;
 
   :hover {
-    background-color: rgb(255, 255, 255, 0.8);
+    background-color: rgb(255, 255, 255);
   }
 `;
 
 export const NextButton = styled.button`
   position: absolute;
 
-  right: 0;
+  right: 0.2rem;
 
-  width: 4rem;
+  width: 2rem;
   height: 4rem;
 
   display: flex;
@@ -189,7 +200,7 @@ export const NextButton = styled.button`
   align-items: center;
 
   border: none;
-  border-radius: 50%;
+  border-radius: 1rem;
 
   color: white;
 
