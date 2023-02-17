@@ -27,7 +27,7 @@ export const Movies = ({ type, movies, onHandleClick }: MoivesProp) => {
   };
 
   const onHandleClickNext = () => {
-    if (currentSlide !== 7) setCurrentSlide(currentSlide + 1);
+    if (currentSlide !== 3) setCurrentSlide(currentSlide + 1);
   };
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export const Movies = ({ type, movies, onHandleClick }: MoivesProp) => {
 
     if (current !== null) {
       current.style.transition = 'all 0.5s ease-in-out';
-      current.style.transform = `translateX(-${currentSlide * 50}%)`;
+      current.style.transform = `translateX(-${currentSlide * 100}%)`;
     }
   }, [currentSlide]);
 
@@ -51,9 +51,12 @@ export const Movies = ({ type, movies, onHandleClick }: MoivesProp) => {
       <CarouselBox>
         <MoviesBox ref={carouselRef}>
           {movies.map((movie) => {
+            const { poster_path, id } = movie;
             return (
               <MoviePoster
-                poster={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                id={id}
+                onClick={onHandleClick}
+                poster={`https://image.tmdb.org/t/p/original/${poster_path}`}
               />
             );
           })}
