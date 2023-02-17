@@ -11,14 +11,14 @@ import {
 } from '../../components';
 import { useRecoilState } from 'recoil';
 import { pickerState } from '../../recoil/atom';
-
-const MOVIE = 'movie/';
+import { GET } from '../../Constants';
 
 const MovieContainer = () => {
   const param = useParams();
 
   const { movies, error, loading } = useAxios({
-    sub_url: `${MOVIE}${param.id}`,
+    type: GET,
+    id: param.id,
   });
 
   const [picker, setPicker] = useRecoilState(pickerState);
