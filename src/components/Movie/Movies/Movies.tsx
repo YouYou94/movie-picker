@@ -54,6 +54,7 @@ export const Movies = ({ type, movies, onHandleClick }: MoivesProp) => {
             const { poster_path, id } = movie;
             return (
               <MoviePoster
+                key={id}
                 id={id}
                 onClick={onHandleClick}
                 poster={`https://image.tmdb.org/t/p/original/${poster_path}`}
