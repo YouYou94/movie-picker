@@ -13,10 +13,6 @@ type AxoisProps = {
   id?: string;
 };
 
-// search/movie?api_key=${TMDB_KEY}&language=ko-KR&page=1&query=${name}
-// movie/popular?api_key=${TMDB_KEY}&language=ko-KR&page=1
-// movie/upcoming?api_key=${TMDB_KEY}&language=ko-KR&page=1
-
 const useAxios = ({ sub_url, search_name, type, id }: AxoisProps) => {
   const [movies, setMovies] = useState<any>([]);
   const [error, setError] = useState<string>('');
@@ -133,37 +129,3 @@ const useAxios = ({ sub_url, search_name, type, id }: AxoisProps) => {
 };
 
 export default useAxios;
-
-/*
-
-const getMovie = async (
-    sub_url: string,
-    name?: string | null | undefined,
-  ) => {
-    let query = '';
-
-    if (name) query = `&query=${name}`;
-
-    await axios
-      .get(`${sub_url}?api_key=${TMDB_KEY}&language=ko-KR&page=1${query}`)
-      .then((res) => {
-        const { results } = res.data;
-
-        if (sub_url === UPCOMING)
-          results.sort(function (a: any, b: any) {
-            return (
-              Number(b.release_date.replaceAll('-', '')) -
-              Number(a.release_date.replaceAll('-', ''))
-            );
-          });
-
-        if (sub_url === UPCOMING || sub_url === POPULAR || sub_url === SEARCH)
-          setMovies(results);
-        else setMovies(res.data);
-      })
-      .catch((error) => setError(error));
-
-    setLoading(false);
-  };
-
-*/

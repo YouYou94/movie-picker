@@ -15,16 +15,3 @@ const AppRouter = () => {
 };
 
 export default AppRouter;
-
-/*
-리펙터링
-
-/moviepicker
-- 홈 URL
-- 구성
-    - Header (Fixed)
-    - Trailer (height 100vh)
-    - searchbar
-    - section (인기, 최신)
-    - footer
-*/
