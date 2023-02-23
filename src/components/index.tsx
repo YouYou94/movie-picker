@@ -6,7 +6,6 @@ export { PosterTemplate } from './common/Template/PosterTemplate/PosterTemplate'
 
 /* components */
 
-export { Header } from './Header/base/Header';
 export { DetailHeader } from './Header/detail/DetailHeader';
 export { Nav } from './Nav/Nav';
 
@@ -16,6 +15,6 @@ export { Movies } from './Movie/Movies/Movies';
 export { Picker } from './Picker/Picker';
 
 /* 리펙터링 */
-export { HeaderRefactor } from './Header/base/HeaderRefactor';
+export { Header } from './Header/base/Header';
 export { Trailer } from './Trailer/Trailer';
 export { Footer } from './Footer/Footer';

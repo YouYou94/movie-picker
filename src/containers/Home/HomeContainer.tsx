@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import {
   Footer,
-  HeaderRefactor,
+  Header,
   Loading,
   Movies,
   PageTemplate,
@@ -29,6 +29,9 @@ const HomeContainer = () => {
     navigate(`/moviepicker/movie/${id}`);
   };
 
+  /* Search */
+  const [keyword, setKeyword] = useState<string>('');
+
   useEffect(() => {
     if (popularError) alert(popularError);
   }, [popularError]);
@@ -39,9 +42,9 @@ const HomeContainer = () => {
 
   return (
     <PageTemplate>
-      <HeaderRefactor />
+      <Header />
       <Trailer />
-      <SearchBar />
+      <SearchBar state={keyword} setState={setKeyword} />
       {popularLoading ? (
         <Loading />
       ) : (
