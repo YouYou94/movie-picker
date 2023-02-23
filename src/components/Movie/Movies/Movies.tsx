@@ -12,12 +12,18 @@ import {
 } from './MoviesStyled';
 
 type MoivesProp = {
-  type?: string;
+  type: string;
   movies: Array<any>;
+  searchKeyword?: string;
   onHandleClick?: any;
 };
 
-export const Movies = ({ type, movies, onHandleClick }: MoivesProp) => {
+export const Movies = ({
+  type,
+  movies,
+  searchKeyword,
+  onHandleClick,
+}: MoivesProp) => {
   /* 캐러셀 슬라이드 기능 */
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -27,7 +33,8 @@ export const Movies = ({ type, movies, onHandleClick }: MoivesProp) => {
   };
 
   const onHandleClickNext = () => {
-    if (currentSlide !== 3) setCurrentSlide(currentSlide + 1);
+    if (currentSlide !== Math.ceil(movies.length / 5))
+      setCurrentSlide(currentSlide + 1);
   };
 
   useEffect(() => {
@@ -47,7 +54,13 @@ export const Movies = ({ type, movies, onHandleClick }: MoivesProp) => {
       <NextButton onClick={onHandleClickNext}>
         <NextImage alt="다음 버튼" />
       </NextButton>
-      <Title>{type === 'POPULAR' ? 'POPULAR ' : 'UPCOMING '}20</Title>
+      <Title>
+        {type === 'POPULAR'
+          ? 'POPULAR 20'
+          : type === 'UPCOMING'
+          ? 'UPCOMING 20'
+          : `'${searchKeyword ? searchKeyword : '없음'}' 을(를) 검색한 결과`}
+      </Title>
       <CarouselBox>
         <MoviesBox ref={carouselRef}>
           {movies.map((movie) => {
