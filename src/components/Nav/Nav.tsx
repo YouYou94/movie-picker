@@ -1,29 +1,17 @@
+import { useNavigate } from 'react-router';
 import { NavLayout, NavBox, SearchResultBox, NavHashTag } from './NavStyled';
 
 type NavProps = {
-  isPopular?: boolean;
-  isUpcoming?: boolean;
-  searchKeyword?: string;
-  onClickPopular?: any;
-  onClickRecent?: any;
+  searchKeyword: string;
 };
 
-export const Nav = ({
-  isPopular,
-  isUpcoming,
-  searchKeyword,
-  onClickPopular,
-  onClickRecent,
-}: NavProps) => {
+export const Nav = ({ searchKeyword }: NavProps) => {
+  const navigate = useNavigate();
+
   return (
     <NavLayout>
       <NavBox>
-        <NavHashTag isSelect={isPopular} onClick={onClickPopular}>
-          #인기
-        </NavHashTag>
-        <NavHashTag isSelect={isUpcoming} onClick={onClickRecent}>
-          #최신
-        </NavHashTag>
+        <NavHashTag onClick={() => navigate('/moviepicker')}>#HOME</NavHashTag>
       </NavBox>
       <SearchResultBox>
         {searchKeyword ? (
