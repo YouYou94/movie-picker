@@ -2,17 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import useAxios from '../../hooks/useAxios';
 import {
-  Header,
   Loading,
   Nav,
   PageTemplate,
   SearchBar,
   Movies,
+  Footer,
 } from '../../components';
-
-const POPULAR_URL = '/moviepicker/popular';
-const UPCOMING_URL = '/moviepicker/upcoming';
-const SEARCH = 'search/movie';
+import { SEARCH } from '../../Constants';
 
 const SearchContainer = () => {
   const param = useParams();
@@ -21,14 +18,9 @@ const SearchContainer = () => {
   /* SearchBox */
   const [keyword, setKeyword] = useState<string>('');
 
-  /* Nav */
-  const onClickPopular = () => navigate(POPULAR_URL);
-
-  const onClickRecent = () => navigate(UPCOMING_URL);
-
   /* Search Movies */
-  const { movies, error, loading }: any = useAxios({
-    sub_url: SEARCH,
+  const { searchMovies, searchError, searchLoading }: any = useAxios({
+    type: SEARCH,
     search_name: param.id ? param.id : '',
   });
 
@@ -39,25 +31,24 @@ const SearchContainer = () => {
   };
 
   useEffect(() => {
-    if (error) alert(`에러 ! ${error}`);
-  }, [error]);
-
-  console.log(movies);
+    if (searchError) alert(`에러 ! ${searchError}`);
+  }, [searchError]);
 
   return (
     <PageTemplate>
-      <Header />
       <SearchBar state={keyword} setState={setKeyword} />
-      <Nav
-        searchKeyword={param.id ? param.id : ''}
-        onClickPopular={onClickPopular}
-        onClickRecent={onClickRecent}
-      />
-      {loading ? (
+      <Nav searchKeyword={param.id ? param.id : ''} />
+      {searchLoading ? (
         <Loading />
       ) : (
-        <Movies movies={movies} onHandleClick={onClickMovie} />
+        <Movies
+          type={SEARCH}
+          movies={searchMovies}
+          searchKeyword={param.id ? param.id : ''}
+          onHandleClick={onClickMovie}
+        />
       )}
+      <Footer />
     </PageTemplate>
   );
 };
