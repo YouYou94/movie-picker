@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const NavLayout = styled.nav`
+  width: 100%;
   height: 7rem;
 
   display: flex;
