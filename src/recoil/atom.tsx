@@ -10,11 +10,6 @@ export const pickerState = atom<PickerTypes[]>({
   key: 'pickerState',
   default: [],
 });
-
-export const displayState = atom<boolean>({
-  key: 'displayState',
-  default: false,
-});
 /*
 
 Atom은 상태(state)의 일부를 나타낸다.
