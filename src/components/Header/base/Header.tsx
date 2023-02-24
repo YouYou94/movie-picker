@@ -9,7 +9,11 @@ import {
   MenuImage,
 } from './HeaderStyled';
 
-export const Header = () => {
+type HeaderProps = {
+  onHandleClick: any;
+};
+
+export const Header = ({ onHandleClick }: HeaderProps) => {
   const navigate = useNavigate();
 
   return (
@@ -25,7 +29,7 @@ export const Header = () => {
       <NavBox>
         <Nav></Nav>
       </NavBox>
-      <MenuBox>
+      <MenuBox onClick={onHandleClick}>
         <MenuImage alt="메뉴 이미지" />
       </MenuBox>
     </Layout>
