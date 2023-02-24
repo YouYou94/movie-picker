@@ -9,25 +9,26 @@ export const HeaderLayout = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  padding: 0 1rem;
-
   z-index: 1;
 `;
 
 export const HeaderButton = styled.button`
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   border: none;
-  border-radius: 50%;
 
   color: white;
 
   background-color: transparent;
+
+  :hover {
+    background-color: rgb(204, 204, 204, 0.2);
+  }
 `;
 
 export const BackImage = styled.img.attrs({
