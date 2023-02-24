@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import {
   PickerContainer,
   PickerHeader,
+  MenuBox,
   ExitImage,
   PickerList,
   PickerItem,
@@ -47,7 +48,9 @@ export const Picker = ({ picker, isDisplay, setIsDisplay }: PickerProps) => {
   return (
     <PickerContainer ref={pickerRef} isDisplay={isDisplay}>
       <PickerHeader>
-        <ExitImage onClick={onClickPickerExit} alt="EXIT" />
+        <MenuBox>
+          <ExitImage onClick={onClickPickerExit} alt="EXIT" />
+        </MenuBox>
       </PickerHeader>
       <PickerList>
         {picker?.map((pickermovie) => {

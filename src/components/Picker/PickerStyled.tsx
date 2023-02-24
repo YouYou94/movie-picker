@@ -13,11 +13,11 @@ export const PickerContainer = styled.div<{ isDisplay?: boolean }>`
 
   flex-direction: column;
 
-  background-color: rgb(11, 43, 64);
+  background-color: rgb(17, 17, 17);
 
   z-index: 2;
 
-  gap: 1rem;
+  gap: 2rem;
 `;
 
 export const PickerHeader = styled.div`
@@ -26,9 +26,21 @@ export const PickerHeader = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+`;
 
-  padding: 0 2rem;
-  border-bottom: 3px solid rgb(204, 204, 204, 0.5);
+export const MenuBox = styled.div`
+  width: 5rem;
+  height: 5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  :hover {
+    background-color: rgb(50, 50, 50);
+  }
 `;
 
 export const ExitImage = styled.img.attrs({
