@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Layout = styled.footer`
   width: 100%;
 
-  height: 25rem;
+  height: 20rem;
 
   margin-top: 5rem;
 
