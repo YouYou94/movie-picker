@@ -1,5 +1,10 @@
-import { Layout } from './FooterStyled';
+import { Layout, FooterTitle, FooterMenuBox } from './FooterStyled';
 
 export const Footer = () => {
-  return <Layout></Layout>;
+  return (
+    <Layout>
+      <FooterTitle>MOVIEPICKER</FooterTitle>
+      <FooterMenuBox></FooterMenuBox>
+    </Layout>
+  );
 };
