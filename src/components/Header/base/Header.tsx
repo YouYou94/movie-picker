@@ -10,14 +10,15 @@ import {
 } from './HeaderStyled';
 
 type HeaderProps = {
+  tabRef: any;
   onHandleClick: any;
 };
 
-export const Header = ({ onHandleClick }: HeaderProps) => {
+export const Header = ({ tabRef, onHandleClick }: HeaderProps) => {
   const navigate = useNavigate();
 
   return (
-    <Layout>
+    <Layout ref={(el) => (tabRef.current[0] = el)}>
       <Title onClick={() => navigate('/moviepicker')}>
         <Emphasis>M</Emphasis>
         {` `}
