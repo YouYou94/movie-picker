@@ -8,11 +8,12 @@ import {
 } from './SearchBarStyled';
 
 type SearchProps = {
+  tabRef?: any;
   state?: string;
   setState?: any;
 };
 
-export const SearchBar = ({ state, setState }: SearchProps) => {
+export const SearchBar = ({ tabRef, state, setState }: SearchProps) => {
   const navigate = useNavigate();
 
   const onChangeSearchKeyword = (
@@ -41,7 +42,7 @@ export const SearchBar = ({ state, setState }: SearchProps) => {
   };
 
   return (
-    <SearchLayout>
+    <SearchLayout ref={(el) => (tabRef.current[1] = el)}>
       <SearchBox>
         <SearchInput
           value={state}
