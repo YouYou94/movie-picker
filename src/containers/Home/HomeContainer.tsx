@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useRecoilState } from 'recoil';
 import {
@@ -17,6 +17,7 @@ import { pickerState } from '../../recoil/atom';
 
 const HomeContainer = () => {
   const navigate = useNavigate();
+  const tabRef = useRef([]);
 
   const { popularMovies, popularError, popularLoading } = useAxios({
     type: POPULAR,
@@ -60,13 +61,14 @@ const HomeContainer = () => {
       ) : (
         <></>
       )}
-      <Header onHandleClick={onClickMenu} />
+      <Header tabRef={tabRef} onHandleClick={onClickMenu} />
       <Trailer />
-      <SearchBar state={keyword} setState={setKeyword} />
+      <SearchBar tabRef={tabRef} state={keyword} setState={setKeyword} />
       {popularLoading ? (
         <Loading />
       ) : (
         <Movies
+          tabRef={tabRef}
           type={POPULAR}
           movies={popularMovies}
           onHandleClick={onClickMovie}
@@ -76,12 +78,13 @@ const HomeContainer = () => {
         <Loading />
       ) : (
         <Movies
+          tabRef={tabRef}
           type={UPCOMING}
           movies={upcomingMovies}
           onHandleClick={onClickMovie}
         />
       )}
-      <Footer />
+      <Footer tabRef={tabRef} />
     </PageTemplate>
   );
 };
