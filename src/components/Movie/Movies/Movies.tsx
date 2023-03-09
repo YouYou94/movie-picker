@@ -12,6 +12,7 @@ import {
 } from './MoviesStyled';
 
 type MoivesProp = {
+  tabRef?: any;
   type: string;
   movies: Array<any>;
   searchKeyword?: string;
@@ -19,6 +20,7 @@ type MoivesProp = {
 };
 
 export const Movies = ({
+  tabRef,
   type,
   movies,
   searchKeyword,
@@ -47,7 +49,7 @@ export const Movies = ({
   }, [currentSlide]);
 
   return (
-    <Layout>
+    <Layout ref={(el) => (tabRef.current[2] = el)}>
       <PrevButton onClick={onHandleClickPrev}>
         <PrevImage alt="이전 버튼" />
       </PrevButton>
